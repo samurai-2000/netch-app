@@ -1,0 +1,9 @@
+@import '/src/assets/plugins/fonts';
+@import '/src/assets/plugins/reset';
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+body {
+    background: $grey-dark;
+    ::selection {background: tt($indigo,0.5)}
+}

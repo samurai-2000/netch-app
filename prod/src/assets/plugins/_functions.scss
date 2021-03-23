@@ -1,0 +1,5 @@
+// funcs
+
+@function tt ($c, $a) {
+    @return transparentize($color: $c, $amount: $a);
+}

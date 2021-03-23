@@ -1,0 +1,59 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+header {
+    width: 100%;
+    height: 65px;
+    background: tt($dark, 0.5);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $w-m;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.apps {
+    display: flex;
+    height: 100%;
+
+    .links-box {
+        display: flex;
+        align-items: center;
+        flex: auto;
+
+        .link {
+            color: $light;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: 0.2s;
+
+            &:hover {color: $indigo;}
+        }
+        .active {color: $scarlet;}
+    }
+
+    .btn-box {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: auto;
+
+        .btn {
+            height: 45px;
+            padding: 0 20px;
+            margin-right: 2rem;
+            background: $scarlet; color: $light;
+            outline: none; border: none; border-radius: 2rem;
+            font-weight: 600;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($scarlet, 0.7);
+            }
+        }
+    }
+}
+

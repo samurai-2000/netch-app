@@ -1,0 +1,9 @@
+@import '/src/assets/plugins/vars';
+
+.wrapper {
+    width: 100%;
+    max-width: $w-m;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}

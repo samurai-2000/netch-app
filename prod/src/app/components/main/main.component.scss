@@ -1,0 +1,135 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+section {min-height: 100vh;}
+
+.s1 {
+    display: flex;
+    min-height: 75vh;
+
+    .box-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+
+        img {width: 100%; user-select: none;}
+    }
+
+    .box-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+
+        &_container {
+            h1, p {color: $light;}
+            h1 {font-size: 4rem; font-weight: 600;}
+            p {font-size: 1.5rem; font-weight: 500;}
+
+            .line {
+                height: 1rem;
+                border-radius: 1rem;
+                background: tt($red, 0.35);
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        & {flex-direction: column;}
+    }
+}
+
+.s2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url('/assets/svgs/techs.svg') bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .box-title {
+
+        h2 {
+            display: flex;
+            margin-bottom: 2rem;
+            color: $light;
+            font-size: 4rem;
+            font-weight: 600;
+
+            .line {
+                height: inherit;
+                width: 1rem;
+                background: tt($red, 0.35);
+                border-radius: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.s3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box-title {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 600;
+            color: $light;
+        }
+        .line {
+            height: 1rem;
+            border-radius: 1rem;
+            background: tt($indigo, 0.35);
+            margin-bottom: 1rem;
+        }
+
+        .list {
+            text-align: left;
+            width: 100%;
+
+            li {
+                margin: 2rem 0;
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $light;
+            }
+            span {
+                color: $scarlet; 
+                font-size: 1.5rem;
+            }
+        }
+
+        .btn {
+            height: 65px;
+            padding: 0 20px;
+            margin: 2rem 0;
+            background: $red;
+            border: none; outline: none; border-radius: 1rem;
+            color: $light;
+            font-weight: 500;
+            font-size: 1.5rem;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($red, 0.7);
+            }
+        }
+    }
+}
+
+.s4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
