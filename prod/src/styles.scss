@@ -1,7 +1,14 @@
+// fonts
 @import '/src/assets/plugins/fonts';
+// reset styles
 @import '/src/assets/plugins/reset';
+// sass variables
 @import '/src/assets/plugins/vars';
+// sass functions
 @import '/src/assets/plugins/functions';
+
+// material icons
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
 body {
     background: $grey-dark;

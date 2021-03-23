@@ -75,6 +75,9 @@ section {min-height: 100vh;}
     justify-content: center;
     align-items: center;
 
+    background: url('/assets/svgs/bg-1.svg') no-repeat;
+    background-size: 100%;
+
     .box-title {
         display: flex;
         flex-direction: column;
@@ -128,8 +131,110 @@ section {min-height: 100vh;}
 }
 
 .s4 {
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background: url('/assets/svgs/bg-2.svg') no-repeat;
+    background-size: 100%;
+
+    .box-title {
+        h2 {
+            font-weight: 600;
+            font-size: 4rem;
+            color: $light;
+        }
+        h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: $light;
+            margin-top: 2rem;
+        }
+
+        .line {
+            height: 1rem;
+            border-radius: 1rem;
+            background: tt($blue, 0.5);
+            margin-top: 1rem;
+        }
+    }
+}
+
+.s5 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+
+    background: url('/assets/svgs/bg-3.svg') center;
+    background-size: 100%;
+
+    h4 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $light;
+    }
+    .box-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+
+        label {
+            display: flex;
+            align-items: center;
+
+            i {
+                margin-left: 1rem;
+                font-size: 2rem;
+                color: $light;
+                user-select: none;
+                cursor: pointer;
+            }
+
+            input {
+                height: 35px;
+                border: 2px solid tt($dark, 0.3); outline: none; border-radius: 2rem;
+                padding: 0 1rem; margin: 0.5rem 0;
+                text-align: center;
+
+                &:focus {
+                    border: 2px solid $indigo;
+                }
+                &:focus + i {
+                    color: $indigo;
+                }
+            }
+        }
+
+        .btn {
+            height: 50px;
+            padding: 0 20px;
+            margin: 2rem 0;
+            background: $mint;
+            border: none; outline: none; border-radius: 1rem;
+            color: $light;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($mint, 0.7);
+            }
+        }
+        .btn-reset {
+            margin-left: 1rem;
+            background: $scarlet !important;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($scarlet, 0.7) !important;
+            }
+        }
+    }
 }

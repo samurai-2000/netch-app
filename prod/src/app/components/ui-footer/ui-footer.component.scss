@@ -1,0 +1,59 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+footer {
+    width: 100%;
+    height: 65px;
+    background: tt($dark, 0.5);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $w-m;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.apps {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    .links-box {
+        display: flex;
+        align-items: center;
+        flex: auto;
+
+        .link {
+            color: $light;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: 0.2s;
+
+            &:hover {color: $indigo;}
+        }
+        .active {color: $scarlet;}
+    }
+
+    .info-box {
+        display: flex;
+        flex: auto;
+
+        &_links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex: auto;
+
+            .link {
+                color: $light;
+                margin-right: 2rem;
+                font-weight: 500;
+                transition: 0.2s;
+
+                &:hover {color: $indigo;}
+            }
+            .active {color: $scarlet;}
+        }
+    }
+}

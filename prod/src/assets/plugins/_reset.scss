@@ -10,4 +10,6 @@ html, body {
 }
 
 li {list-style: none;}
-a {text-decoration: none;}
+a {text-decoration: none; user-select: none;}
+
+button {user-select: none;}

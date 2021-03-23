@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiHeaderComponent } from './components/ui-header/ui-header.component';
 import { MainComponent } from './components/main/main.component';
+import { UiFooterComponent } from './components/ui-footer/ui-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiHeaderComponent,
-    MainComponent
+    MainComponent,
+    UiFooterComponent
   ],
   imports: [
     BrowserModule,
