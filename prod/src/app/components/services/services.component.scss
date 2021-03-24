@@ -1,0 +1,126 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+section {
+    min-height: 50vh;
+}
+
+.s1 {
+
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        min-height: 50vh;
+        margin: 2rem auto; padding: 1rem;
+        background: tt($dark, 0.7);
+        border-radius: 1rem;
+
+        .box-title {
+            background: tt($dark, 0.5);
+            border-radius: 1rem;
+            padding: 0.5rem 0;
+
+            h2 {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $light;
+            }
+        }
+
+        .box-cards {
+            display: flex;
+            flex: 100%;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            .card {
+                flex: 1 1 270px;
+                height: auto;
+                padding: 1rem;
+                background: tt($dark, 0.7);
+                border-radius: 1rem;
+                color: $light;
+            }
+        }
+    }
+}
+
+.s2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        flex: 49%;
+        min-height: 50vh;
+        margin: 2rem auto; padding: 1rem;
+        background: tt($dark, 0.7);
+        border-radius: 1rem;
+
+        .box-title {
+            background: tt($dark, 0.5);
+            border-radius: 1rem;
+            padding: 0.5rem 0;
+
+            h2 {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $light;
+            }
+        }
+
+        .box-cards {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            .card {
+                flex: 1 1 100%;
+                height: auto;
+                padding: 1rem;
+                background: tt($dark, 0.7);
+                border-radius: 1rem;
+                color: $light;
+            }
+        }
+    }
+}
+.s3 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+    h3 {
+        margin: 2rem 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $light;
+    }
+
+    .btn {
+        height: 65px;
+        padding: 0 20px;
+        margin: 2rem 0;
+        background: $red;
+        border: none; outline: none; border-radius: 1rem;
+        color: $light;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($red, 0.7);
+        }
+    }
+}

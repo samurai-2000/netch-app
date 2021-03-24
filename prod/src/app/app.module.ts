@@ -8,13 +8,23 @@ import { AppComponent } from './app.component';
 import { UiHeaderComponent } from './components/ui-header/ui-header.component';
 import { MainComponent } from './components/main/main.component';
 import { UiFooterComponent } from './components/ui-footer/ui-footer.component';
+import { ServicesComponent } from './components/services/services.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { InfoComponent } from './components/info/info.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { GithubComponent } from './components/github/github.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiHeaderComponent,
     MainComponent,
-    UiFooterComponent
+    UiFooterComponent,
+    ServicesComponent,
+    ContactsComponent,
+    InfoComponent,
+    ProjectsComponent,
+    GithubComponent
   ],
   imports: [
     BrowserModule,

@@ -12,5 +12,14 @@
 
 body {
     background: $grey-dark;
-    ::selection {background: tt($indigo,0.5)}
+    ::selection {background: tt($indigo,0.5);}
+}
+
+::-webkit-scrollbar {
+    width: 0.7rem;
+    background: tt($dark, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: $grey-middle;
+    border-radius: 1rem;
 }

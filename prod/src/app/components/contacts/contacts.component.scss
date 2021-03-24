@@ -1,0 +1,70 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+section {min-height: 100vh;}
+
+.s1 {
+    display: flex;
+    flex-wrap: wrap;
+
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        min-height: 50vh;
+        margin: 2rem auto; padding: 1rem;
+        background: tt($dark, 0.7);
+        border-radius: 1rem;
+
+        .box-title {
+            background: tt($dark, 0.5);
+            border-radius: 1rem;
+            padding: 0.5rem 0;
+
+            h2 {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $light;
+            }
+        }
+
+        .box-info {
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            .card {
+                flex: 1 1 auto;
+                height: auto;
+                padding: 1rem;
+                background: tt($dark, 0.7);
+                border-radius: 1rem;
+                color: $light;
+            }
+        }
+    }
+
+    .btn {
+        flex: auto;
+        height: 65px;
+        padding: 0 20px;
+        margin: 2rem 1rem;
+        background: $indigo;
+        border: none; outline: none; border-radius: 1rem;
+        color: $light;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($indigo, 0.7);
+        }
+    }
+}
+
