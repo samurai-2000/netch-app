@@ -27,6 +27,19 @@ section {min-height: 100vh;}
             h1 {font-size: 4rem; font-weight: 600;}
             p {font-size: 1.5rem; font-weight: 500;}
 
+            @media (max-width: 768px) {
+                h1 {font-size: 3.5rem; text-align: center;}
+                p {font-size: 1.2rem;}
+            }
+            @media (max-width: 550px) {
+                h1 {font-size: 3rem; text-align: center;}
+                p {font-size: 1.1rem;}            
+            }
+            @media (max-width: 320px) {
+                h1 {font-size: 2.5rem; text-align: center;}
+                p {font-size: 1rem;} 
+            }
+
             .line {
                 height: 1rem;
                 border-radius: 1rem;
@@ -59,6 +72,16 @@ section {min-height: 100vh;}
             font-size: 4rem;
             font-weight: 600;
 
+            @media (max-width: 768px) {
+                font-size: 3.5rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 3rem;
+            }
+            @media (max-width: 320px) {
+                font-size: 2.5rem;
+            }
+
             .line {
                 height: inherit;
                 width: 1rem;
@@ -87,7 +110,18 @@ section {min-height: 100vh;}
             font-size: 4rem;
             font-weight: 600;
             color: $light;
+
+            @media (max-width: 768px) {
+                font-size: 3.5rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 3rem;
+            }
+            @media (max-width: 320px) {
+                font-size: 2.5rem;
+            }
         }
+
         .line {
             height: 1rem;
             border-radius: 1rem;
@@ -108,6 +142,15 @@ section {min-height: 100vh;}
             span {
                 color: $scarlet; 
                 font-size: 1.5rem;
+            }
+
+            @media (max-width: 768px) {
+                li {font-size: 1.2rem; text-align: center;}
+                span {font-size: 1.2rem;}
+            }
+            @media (max-width: 550px) {
+                li {font-size: 1.1rem; text-align: center;}
+                span {font-size: 1.1rem;}
             }
         }
 
@@ -141,16 +184,37 @@ section {min-height: 100vh;}
     background-size: 100%;
 
     .box-title {
+
         h2 {
             font-weight: 600;
             font-size: 4rem;
             color: $light;
+
+            @media (max-width: 768px) {
+                font-size: 3.5rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 3rem;
+            }
+            @media (max-width: 320px) {
+                font-size: 2.5rem;
+            }
         }
         h3 {
             text-align: center;
             font-size: 2rem;
             color: $light;
             margin-top: 2rem;
+
+            @media (max-width: 768px) {
+                font-size: 1.5rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 1.2rem;
+            }
+            @media (max-width: 320px) {
+                font-size: 1rem;
+            }
         }
 
         .line {
@@ -159,6 +223,19 @@ section {min-height: 100vh;}
             background: tt($blue, 0.5);
             margin-top: 1rem;
         }
+    }
+
+    .box-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+           @media (max-width: 550px) {
+            width: 80%;
+        } 
+        }
+        
     }
 }
 
@@ -177,13 +254,22 @@ section {min-height: 100vh;}
         font-size: 1.5rem;
         font-weight: 500;
         color: $light;
+
+        @media (max-width: 320px) {
+            font-size: 1.2rem;
+        }
     }
     .box-form {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         padding: 0 1rem;
+
+        @media (max-width: 320px) {
+            padding: 0;
+        }
 
         label {
             display: flex;

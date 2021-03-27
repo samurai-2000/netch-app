@@ -3,3 +3,10 @@
     <router-outlet></router-outlet>
 </div>
 <ui-footer></ui-footer>
+<ui-modal 
+*ngIf='toggleWrapper'
+[active]='activeModal'
+[headerContent]='headerContent'
+[bodyContent]='bodyContent'>
+</ui-modal>
+

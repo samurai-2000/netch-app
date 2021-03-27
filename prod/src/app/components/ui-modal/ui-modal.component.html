@@ -1,0 +1,13 @@
+<div (click)='outModalClick($event)' class="modal-wrapper">
+    <div 
+    [@Modal]="active ? 'start' : 'stop'" 
+    class="modal-box">
+        <i (click)='closeModal()' class="material-icons btn-close">close</i>
+        <div class="modal-header">
+            {{headerContent}}
+        </div>
+        <div class="modal-body">
+            {{bodyContent}}
+        </div>
+    </div>
+</div>

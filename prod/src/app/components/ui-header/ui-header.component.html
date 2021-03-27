@@ -1,6 +1,7 @@
 <header>
     <div class="wrapper">
         <nav class="apps">
+            <i (click)='toggleNavMenu()' class="material-icons navMenuTrigger">menu</i>
             <div class="links-box">
                 <a routerLink='/' class="link">Главная</a>
                 <a routerLink='/projects' routerLinkActive='active' class="link">Проекты</a>
@@ -15,3 +16,17 @@
         </nav>
     </div>
 </header>
+
+<nav [@NavMenu]="slideNavMenu ? 'slide' : 'close'" class="nav-menu">
+    <div class="nav-menu_apps">
+        <a (click)='toggleNavMenu()' routerLink='/' class="link">Главная</a>
+        <a (click)='toggleNavMenu()' routerLink='/projects' routerLinkActive='active' class="link">Проекты</a>
+        <a (click)='toggleNavMenu()' routerLink='/services' routerLinkActive='active' class="link">Услуги</a>
+        <a (click)='toggleNavMenu()' routerLink='/contacts' routerLinkActive='active' class="link">Контакты</a>
+        <a (click)='toggleNavMenu()' routerLink='/info' routerLinkActive='active' class="link">Информация</a>
+        <a (click)='toggleNavMenu()' routerLink='/github' routerLinkActive='active' class="link">GitHub</a>
+    </div>
+    <div class="btn-box">
+        <button (click)='toggleNavMenu()' class="btn">Что с моим заказом?</button>
+    </div>
+</nav>

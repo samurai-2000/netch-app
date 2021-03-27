@@ -13,6 +13,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { InfoComponent } from './components/info/info.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { GithubComponent } from './components/github/github.component';
+import { UiModalComponent } from './components/ui-modal/ui-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,18 +21,19 @@ import { GithubComponent } from './components/github/github.component';
     UiHeaderComponent,
     MainComponent,
     UiFooterComponent,
+    UiModalComponent,
     ServicesComponent,
     ContactsComponent,
     InfoComponent,
     ProjectsComponent,
-    GithubComponent
+    GithubComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
