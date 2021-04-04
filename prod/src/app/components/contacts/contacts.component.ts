@@ -1,22 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { HttpWorkerService } from 'src/app/services/http-worker.service';
 
 @Component({
   selector: 'netch-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
-  animations: []
 })
 export class ContactsComponent implements OnInit{
 
-  constructor(private app: AppComponent) {
+  constructor(
+    private app: AppComponent,
+    private httpWorker: HttpWorkerService
+  ) {
 
   }
 
   ngOnInit(): void {
+
   }
 
   openModal() {
-    this.app.openModal('Модальное окно','Много текста')
+    this.httpWorker.getTextContent('main').subscribe((res: any) => {
+      this.app.openModal(res[0].header,res[0].body)
+    })
   }
 }

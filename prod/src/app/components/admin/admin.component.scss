@@ -1,0 +1,77 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+section {min-height: 100vh;}
+
+.s1 {
+    caption {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    table {
+        width: 100%;
+        margin: 4rem auto 0 auto;
+        color: $light;
+        background: tt($dark, 0.3);
+        border-collapse: collapse;
+
+        th, td {
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 1px solid $light;
+        }
+
+    }
+}
+
+.l1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 500px;
+        height: 500px;
+
+        span {
+            color: $light;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        input {
+            height: 35px;
+            border: 2px solid tt($dark, 0.3); outline: none; border-radius: 2rem;
+            padding: 0 1rem; margin: 0.5rem 0;
+            text-align: center;
+
+            &:focus {
+                border: 2px solid $indigo;
+            }
+            &:focus + i {
+                color: $indigo;
+            }
+        }
+
+        .btn {
+            height: 50px;
+            padding: 0 20px;
+            margin: 2rem 0;
+            background: $mint;
+            border: none; outline: none; border-radius: 1rem;
+            color: $light;
+            font-weight: 500;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($mint, 0.7);
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { InfoComponent } from './components/info/info.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { GithubComponent } from './components/github/github.component';
 import { UiModalComponent } from './components/ui-modal/ui-modal.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { UiModalComponent } from './components/ui-modal/ui-modal.component';
     InfoComponent,
     ProjectsComponent,
     GithubComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],

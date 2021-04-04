@@ -1,0 +1,48 @@
+<section *ngIf='adminActive; else login' class="s1">
+    <table>
+        <caption>Обратная связь</caption>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Почта</th>
+                <th>Номер</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)='test()' class="btn">Отправить</button>
+</section>
+<ng-template #reg>
+    <section class="l1">
+        <form class="form">
+            <span>Имя</span>
+            <input type="text">
+            <span>Фамилия</span>
+            <input type="text">
+            <span>Почта</span>
+            <input type="text">
+            <span>Пароль</span>
+            <input type="text">
+            <button class="btn">Отправить</button>
+        </form>
+    </section>
+</ng-template>
+<ng-template #login>
+    <section class="l1">
+        <form class="form">
+            <span>Почта</span>
+            <input type="text" name="email" [(ngModel)]='logEmail'>
+            <span>Пароль</span>
+            <input type="text" name="pass" [(ngModel)]='logPass'>
+            <button (click)='postLogin()' class="btn">Отправить</button>
+        </form>
+    </section>
+</ng-template>

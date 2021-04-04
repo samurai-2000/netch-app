@@ -2,13 +2,15 @@ import { animate, query, stagger, state, style, transition, trigger } from "@ang
 
 export const navMenu = trigger('NavMenu',[
   state('slide', style({
-    transform: 'none'
+    transform: 'none',
+    opacity: 1,
   })),
   state('close', style({
-    transform: 'translateX(-150%)'
+    transform: 'translateX(-150%)',
+    opacity: 0,
   })),
   transition('close <=> slide', [
-    animate('0.2s ease-in-out')
+    animate('0.2s ease-in')
   ]),
 
 ])

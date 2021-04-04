@@ -13,11 +13,12 @@ export class AppComponent {
   public headerContent!: string
   public bodyContent!: string
 
-  constructor() {
+  constructor() {}
 
-  }
+  public openModal(
+    headerContent = '', 
+    bodyContent = '') {
 
-  public openModal(headerContent = '', bodyContent = '') {
     this.headerContent = headerContent
     this.bodyContent = bodyContent
     this.toggleWrapper = true
@@ -28,9 +29,10 @@ export class AppComponent {
 
   public closeModal() {
     this.activeModal = false
-    this.toggleWrapper = false
-
-    document.body.style.overflow = 'auto'
+    setTimeout(() => {
+      this.toggleWrapper = false
+      document.body.style.overflow = 'auto'
+    } , 400);
   }
 
 }
