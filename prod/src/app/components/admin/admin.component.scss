@@ -4,14 +4,24 @@
 section {min-height: 100vh;}
 
 .s1 {
-    caption {
+
+    .table-container {
+        max-height: 50vh;
+        overflow-y: auto;
+        border: 3px solid tt($light, 0.7);
+    }
+
+    h3 {
         font-size: 1.25rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin: 2rem;
+        color: $light;
+        text-align: center;
     }
+
     table {
         width: 100%;
-        margin: 4rem auto 0 auto;
+        height: 75vh;
         color: $light;
         background: tt($dark, 0.3);
         border-collapse: collapse;
@@ -19,9 +29,43 @@ section {min-height: 100vh;}
         th, td {
             text-align: center;
             padding: 1rem;
-            border-bottom: 1px solid $light;
+            border-bottom: 1px solid tt($light, 0.7);
         }
 
+    }
+
+    .btn {
+        height: 50px;
+        padding: 0 20px;
+        margin: 3rem 0;
+        margin-bottom: 0;
+        background: $mint;
+        border: none; outline: none; border-radius: 1rem;
+        color: $light;
+        font-weight: 500;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($mint, 0.7);
+        }
+    }
+
+    .btn-clear {
+        margin: 0;
+        background: $red;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($red, 0.7);
+        }
+    }
+    .btn-check {
+        margin: 0;
+        background: $mint;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($mint, 0.7);
+        }
     }
 }
 
@@ -35,6 +79,7 @@ section {min-height: 100vh;}
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        margin-bottom: 5rem;
         width: 500px;
         height: 500px;
 
@@ -73,5 +118,14 @@ section {min-height: 100vh;}
                 box-shadow: 0 0 0 5px tt($mint, 0.7);
             }
         }
+
+        .btn-2 {
+            background: $indigo;
+            margin: 0.5rem 0;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 0 5px tt($indigo, 0.7);
+            }
+        }   
     }
 }

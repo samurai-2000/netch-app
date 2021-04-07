@@ -1,48 +1,57 @@
-<section *ngIf='adminActive; else login' class="s1">
-    <table>
-        <caption>Обратная связь</caption>
-        <thead>
-            <tr>
-                <th>№</th>
-                <th>Имя</th>
-                <th>Почта</th>
-                <th>Номер</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    <button (click)='test()' class="btn">Отправить</button>
+<section *ngIf='adminActive; else auth' class="s1">
+    <button (click)='getAll()' class="btn">Запросить</button>
+    <h3>Обратная связь</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Номер</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let item of feedback; let i = index'>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.createdAt }}</td>
+                    <td>
+                        <button *ngIf='item.active' (click)="check(item)" class="btn btn-clear"><i class="material-icons">close</i></button>
+                        <button *ngIf='!item.active' (click)="check(item)" class="btn btn-check"><i class="material-icons">check</i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
-<ng-template #reg>
-    <section class="l1">
-        <form class="form">
-            <span>Имя</span>
-            <input type="text">
-            <span>Фамилия</span>
-            <input type="text">
-            <span>Почта</span>
-            <input type="text">
-            <span>Пароль</span>
-            <input type="text">
-            <button class="btn">Отправить</button>
-        </form>
-    </section>
-</ng-template>
-<ng-template #login>
-    <section class="l1">
+<ng-template #auth>
+    <section *ngIf='toggle == false' class="l1">
         <form class="form">
             <span>Почта</span>
             <input type="text" name="email" [(ngModel)]='logEmail'>
             <span>Пароль</span>
-            <input type="text" name="pass" [(ngModel)]='logPass'>
+            <input type="password" name="pass" [(ngModel)]='logPass'>
             <button (click)='postLogin()' class="btn">Отправить</button>
+            <button (click)='toggle = true' class="btn btn-2">Регистрация</button>
+        </form>
+    </section>
+    <section *ngIf='toggle' class="l1">
+        <form class="form">
+            <span>Имя</span>
+            <input type="text" [(ngModel)]='regVals.firstname'>
+            <span>Фамилия</span>
+            <input type="text" [(ngModel)]='regVals.lastname'>
+            <span>Почта</span>
+            <input type="text" [(ngModel)]='regVals.email'>
+            <span>Пароль</span>
+            <input type="password" [(ngModel)]='regVals.pass'>
+            <button (click)='postRegistration()' class="btn">Отправить</button>
+            <button (click)='toggle = false' class="btn btn-2">Войти</button>
         </form>
     </section>
 </ng-template>

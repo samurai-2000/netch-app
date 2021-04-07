@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HttpWorkerService } from 'src/app/services/http-worker.service';
 
@@ -9,38 +8,70 @@ import { HttpWorkerService } from 'src/app/services/http-worker.service';
 })
 export class AdminComponent implements OnInit {
 
-  public adminActive = false
-
-  public logPass!: string
-  public logEmail!: string
+  public adminActive = false // open admin page
+  public toggle = false // toggle login / registration
+  public logPass!: string // login var password
+  public logEmail!: string // login var email
+  public feedback!: any[] // feedback information 
+  public regVals = { // registration vars 
+    firstname: '',
+    lastname: '',
+    email: '',
+    pass: '',
+  }
 
   constructor(private httpWorker: HttpWorkerService) {}
 
   ngOnInit(): void {
-
+    this.getToken()
   }
 
+  // sending a login and requesting a field with a token
   public postLogin() {
     let options = {
       username: this.logEmail,
       password: this.logPass,
     }
-    this.httpWorker.postLogin(options).subscribe((res) => {
-      console.log(res.headers.get('Authorization'))
+    this.httpWorker.postLogin(options)
+    .subscribe((res: any) => {
+      this.httpWorker.setLocal(res.headers.get('authorization'))
+      this.getToken()
     })
   }
 
-  public test() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ2YWxkMXNsMHZlLjAwQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNjE3MDQ1Mjc2LCJleHAiOjE2MTgxODU2MDB9.XXLibXhtdHRON77QXezde1dGMRvxrg_8XSWFHilYfYUjVYcE5_qCL_SjA3Lbru8H'
-      })
+  // sending a registration
+  public postRegistration() {
+    let options = {
+      firstname: this.regVals.firstname,
+      lastname: this.regVals.lastname,
+      email: this.regVals.email,
+      password: this.regVals.pass,
     }
-    
-    this.httpWorker.Test(httpOptions).subscribe((res) => {
-      console.log(res)
+    this.httpWorker.postRegistration(options).subscribe((res: any) => {
+      this.toggle = false
     })
   }
+
+  // checking for token availability
+  public getToken() {
+    if (this.httpWorker.getLocal() != null) {
+      this.adminActive = true
+    } else {
+      this.adminActive = false
+    }
+  }
+
+  // requesting all information from the server
+  public getAll() {
+    this.httpWorker.getFeedback().subscribe((res: any) => this.feedback = res) 
+  }
+
+  public check(item: any) {
+    if (item.active) item.active = false
+    else item.active = true
+  }
+
+
   
 
 }
