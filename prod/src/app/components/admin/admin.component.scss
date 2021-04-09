@@ -8,6 +8,7 @@ section {min-height: 100vh;}
     .table-container {
         max-height: 50vh;
         overflow-y: auto;
+        overflow-x: hidden;
         border: 3px solid tt($light, 0.7);
     }
 
