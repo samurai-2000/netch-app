@@ -7,6 +7,7 @@ import { InfoComponent } from './components/info/info.component';
 import { MainComponent } from './components/main/main.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
+import { BriefComponent } from "./components/brief/brief.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent, pathMatch: 'full'},
@@ -15,8 +16,9 @@ const routes: Routes = [
   {path: 'contacts', component: ContactsComponent},
   {path: 'info', component: InfoComponent},
   {path: 'github', component: GithubComponent},
+  {path: 'brief', component: BriefComponent},
   {path: 'admin', component: AdminComponent},
-  
+
 ];
 
 @NgModule({

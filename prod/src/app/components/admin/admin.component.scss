@@ -38,8 +38,7 @@ section {min-height: 100vh;}
     .btn {
         height: 50px;
         padding: 0 20px;
-        margin: 3rem 0;
-        margin-bottom: 0;
+        margin: 3rem 0 0;
         background: $mint;
         border: none; outline: none; border-radius: 1rem;
         color: $light;
@@ -127,6 +126,6 @@ section {min-height: 100vh;}
             &:hover, &:focus {
                 box-shadow: 0 0 0 5px tt($indigo, 0.7);
             }
-        }   
+        }
     }
 }

@@ -1,0 +1,60 @@
+<section class="s1">
+  <div class="brief-box">
+    <div class="brief-header">
+      <h1>Бриф</h1>
+    </div>
+    <div class="brief-body">
+      <form>
+        <span>Ф.И.О.</span>
+        <input type="text" name="username"  [(ngModel)]='briefVals.name'>
+
+        <span>Почта</span>
+        <input type="email" name="email" [(ngModel)]='briefVals.email'>
+
+        <span>Телефон</span>
+        <input type="tel" name="phone" [(ngModel)]='briefVals.phone'>
+
+        <span>Цели проекта</span>
+        <textarea name="goals" [(ngModel)]='briefVals.goals'></textarea>
+
+        <span>Требования к проекту</span>
+        <textarea name="requirements" [(ngModel)]='briefVals.requirements'></textarea>
+
+        <span>Результаты проекты</span>
+        <textarea name="results" [(ngModel)]='briefVals.results'></textarea>
+
+        <span>Ограничения</span>
+        <textarea name="restrictions" [(ngModel)]='briefVals.limitations'></textarea>
+
+        <span>Допущения</span>
+        <textarea name="assumptions" [(ngModel)]='briefVals.assumptions'></textarea>
+
+        <span>Вид деятельности</span>
+        <input type="text" name="activity" [(ngModel)]='briefVals.kindOfActivity'>
+
+        <span>Есть ли макет сайта?</span>
+        <input type="text" name="design" [(ngModel)]='briefVals.design'>
+
+        <span>Есть ли сайт?</span>
+        <input type="text" name="site" [(ngModel)]='briefVals.site'>
+
+        <span>Ваша продукция?</span>
+        <input type="text" name="products" [(ngModel)]='briefVals.products'>
+
+        <span>Ваши услуги?</span>
+        <input type="text" name="services" [(ngModel)]='briefVals.services'>
+
+        <span>Нужна помощь в создании логотипа?</span>
+        <input type="text" name="logo" [(ngModel)]='briefVals.logo'>
+
+        <span>У вас есть контент для сайта?</span>
+        <input type="text" name="content" [(ngModel)]='briefVals.content'>
+
+        <span>Основные разделы на сайте</span>
+        <textarea name="sections" [(ngModel)]='briefVals.sections'></textarea>
+
+        <button (click)='postBrief()' class="btn">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>

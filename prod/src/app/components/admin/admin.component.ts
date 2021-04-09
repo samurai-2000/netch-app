@@ -12,8 +12,8 @@ export class AdminComponent implements OnInit {
   public toggle = false // toggle login / registration
   public logPass!: string // login var password
   public logEmail!: string // login var email
-  public feedback!: any[] // feedback information 
-  public regVals = { // registration vars 
+  public feedback!: any[] // feedback information
+  public regVals = { // registration vars
     firstname: '',
     lastname: '',
     email: '',
@@ -47,31 +47,26 @@ export class AdminComponent implements OnInit {
       email: this.regVals.email,
       password: this.regVals.pass,
     }
-    this.httpWorker.postRegistration(options).subscribe((res: any) => {
+    this.httpWorker.postRegistration(options).subscribe(() => {
       this.toggle = false
     })
   }
 
   // checking for token availability
   public getToken() {
-    if (this.httpWorker.getLocal() != null) {
-      this.adminActive = true
-    } else {
-      this.adminActive = false
-    }
+    this.adminActive = this.httpWorker.getLocal() != null;
   }
 
   // requesting all information from the server
   public getAll() {
-    this.httpWorker.getFeedback().subscribe((res: any) => this.feedback = res) 
+    this.httpWorker.getFeedback().subscribe((res: any) => this.feedback = res)
   }
 
   public check(item: any) {
-    if (item.active) item.active = false
-    else item.active = true
+    item.active = !item.active;
   }
 
 
-  
+
 
 }

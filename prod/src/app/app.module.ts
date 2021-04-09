@@ -16,6 +16,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { GithubComponent } from './components/github/github.component';
 import { UiModalComponent } from './components/ui-modal/ui-modal.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { BriefComponent } from './components/brief/brief.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ProjectsComponent,
     GithubComponent,
     AdminComponent,
+    BriefComponent,
   ],
   imports: [
     BrowserModule,
