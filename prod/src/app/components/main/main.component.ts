@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpWorkerService } from 'src/app/services/http-worker.service';
 
 @Component({
   selector: 'netch-main',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public feedbackVals = {
+    name: '',
+    email: '',
+    phone: '',
+  }
+
+  constructor(private httpWorker: HttpWorkerService) { }
 
   ngOnInit(): void {
+  }
+
+  postFeedback() {
+    this.httpWorker.postFeedback(this.feedbackVals)
+    .subscribe((res: any) => console.log(res))
   }
 
 }

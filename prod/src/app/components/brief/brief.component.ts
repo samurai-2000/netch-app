@@ -6,6 +6,7 @@ import { BriefService } from 'src/app/services/brief.service';
   templateUrl: './brief.component.html',
   styleUrls: ['./brief.component.scss']
 })
+
 export class BriefComponent implements OnInit {
 
   public briefVals = {
@@ -30,7 +31,7 @@ export class BriefComponent implements OnInit {
   constructor(private brief: BriefService) { }
 
   ngOnInit(): void {
-    
+    window.scrollTo(0, 0)
   }
 
   public postBrief() {

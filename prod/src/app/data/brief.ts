@@ -1,0 +1,18 @@
+export interface Brief {
+    name: string,
+    email: string,
+    phone: string,
+    goals: string,
+    requirements: string,
+    results: string,
+    limitations: string,
+    assumptions: string,
+    kindOfActivity: string,
+    design: string,
+    site: string,
+    products: string,
+    services: string,
+    logo: string,
+    content: string,
+    sections: string,
+}

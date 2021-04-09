@@ -1,0 +1,91 @@
+@import '/src/assets/plugins/vars';
+@import '/src/assets/plugins/functions';
+
+section {min-height: 100vh;}
+
+.s1 {
+    user-select: none;
+
+    .track-box {
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        min-height: 50vh;
+        margin: 2rem auto; padding: 1rem;
+        background: tt($dark, 0.7);
+        border-radius: 1rem;
+    
+        .track-header {
+          background: tt($dark, 0.5);
+          border-radius: 1rem;
+          padding: 0.5rem 0;
+    
+          h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $light;
+          }
+        }
+    
+        .track-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: auto;
+          width: 100%;
+          margin-top: 1rem;
+          padding: 2rem 1rem 1rem;
+          background: tt($dark, 0.7);
+          border-radius: 1rem;
+    
+        }
+
+        span {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: $light;
+        }
+        .track-point {
+            width: 150px;
+            height: 150px;
+            margin: 2rem;
+            background: $indigo;
+            border-radius: 50%;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 0 15px tt($indigo, 0.7);
+            }
+        }
+        .track-point:last-child {margin-bottom: 4rem;}
+
+        .track-active {
+            background: $mint;
+
+            &:hover {
+                box-shadow: 0 0 0 15px tt($mint, 0.7);
+            }
+        }
+    
+        .btn {
+          height: 50px;
+          padding: 0 20px;
+          margin: 2rem 0;
+          background: $mint;
+          border: none; outline: none; border-radius: 1rem;
+          color: $light;
+          font-weight: 500;
+          transition: 0.2s;
+          cursor: pointer;
+    
+          &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($mint, 0.7);
+          }
+        }
+      }
+}

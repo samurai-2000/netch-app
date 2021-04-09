@@ -7,6 +7,7 @@ section {min-height: 100vh;}
 
     .table-container {
         max-height: 50vh;
+        margin-bottom: 5rem;
         overflow-y: auto;
         overflow-x: hidden;
         border: 3px solid tt($light, 0.7);
@@ -39,6 +40,7 @@ section {min-height: 100vh;}
         height: 50px;
         padding: 0 20px;
         margin: 3rem 0 0;
+        margin-right: 1rem;
         background: $mint;
         border: none; outline: none; border-radius: 1rem;
         color: $light;
@@ -57,6 +59,14 @@ section {min-height: 100vh;}
 
         &:hover, &:focus {
             box-shadow: 0 0 0 5px tt($red, 0.7);
+        }
+    }
+    .btn-more {
+        margin: 0;
+        background: $indigo;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($indigo, 0.7);
         }
     }
     .btn-check {

@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
 import { BriefComponent } from "./components/brief/brief.component";
+import { TrackingComponent } from './components/tracking/tracking.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent, pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'info', component: InfoComponent},
   {path: 'github', component: GithubComponent},
   {path: 'brief', component: BriefComponent},
+  {path: 'tracking', component: TrackingComponent},
   {path: 'admin', component: AdminComponent},
 
 ];

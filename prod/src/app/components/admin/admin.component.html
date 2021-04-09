@@ -1,5 +1,7 @@
 <section *ngIf='adminActive; else auth' class="s1">
-    <button (click)='getAll()' class="btn">Запросить</button>
+    <button (click)='getAllFeedback()' class="btn">Звонки</button>
+    <button (click)='getAllBriefs()' class="btn">Брифы</button>
+    <button (click)='getProgress()' class="btn">Прогресс</button>
     <h3>Обратная связь</h3>
     <div class="table-container">
         <table>
@@ -28,14 +30,68 @@
             </tbody>
         </table>
     </div>
+    <h3>Брифы</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Номер</th>
+                    <th>Дата</th>
+                    <th>Детали</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let item of briefs; let i = index'>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.createdAt }}</td>
+                    <td>
+                        <button class="btn btn-more"><i class="material-icons">apps</i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Прогресс</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Номер</th>
+                    <th>Дата</th>
+                    <th>Детали</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let item of progress; let i = index'>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ item.userBrief.name }}</td>
+                    <td>{{ item.userBrief.email }}</td>
+                    <td>{{ item.userBrief.phone }}</td>
+                    <td>{{ item.userBrief.createdAt }}</td>
+                    <td>
+                        <button class="btn btn-more"><i class="material-icons">apps</i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 <ng-template #auth>
     <section *ngIf='toggle == false' class="l1">
         <form class="form">
             <span>Почта</span>
-            <input type="text" name="email" [(ngModel)]='logEmail'>
+            <input type="text" name="email" [(ngModel)]='logVals.username'>
             <span>Пароль</span>
-            <input type="password" name="pass" [(ngModel)]='logPass'>
+            <input type="password" name="pass" [(ngModel)]='logVals.password'>
             <button (click)='postLogin()' class="btn">Отправить</button>
             <button (click)='toggle = true' class="btn btn-2">Регистрация</button>
         </form>
@@ -49,7 +105,7 @@
             <span>Почта</span>
             <input type="text" [(ngModel)]='regVals.email'>
             <span>Пароль</span>
-            <input type="password" [(ngModel)]='regVals.pass'>
+            <input type="password" [(ngModel)]='regVals.password'>
             <button (click)='postRegistration()' class="btn">Отправить</button>
             <button (click)='toggle = false' class="btn btn-2">Войти</button>
         </form>

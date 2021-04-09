@@ -15,6 +15,18 @@ export class HttpWorkerService {
 
   constructor(private http: HttpClient) {}
 
+  public getProgress() {
+    return this.http.get(`${this.url}/admin/api/progress`, this.headers)
+  }
+
+  public getActiveBriefs() {
+    return this.http.get(`${this.url}/admin/api/briefs/active`, this.headers)
+  }
+
+  public removeBrief(id: number) {
+    return this.http.delete(`${this.url}/admin/api/briefs/${id}`, this.headers)
+  }
+
   public getTextContentAll() {
     return this.http.get(`${this.url}/api/front/allText`)
   }
@@ -33,6 +45,10 @@ export class HttpWorkerService {
 
   public getFeedback() {
     return this.http.get(`${this.url}/admin/api/feedback`, this.headers)
+  }
+
+  public postFeedback(options: any) {
+    return this.http.post(`${this.url}/api/feedback`, options)
   }
 
   public getImages(name: any) {

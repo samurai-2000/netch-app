@@ -10,14 +10,18 @@ export class AdminComponent implements OnInit {
 
   public adminActive = false // open admin page
   public toggle = false // toggle login / registration
-  public logPass!: string // login var password
-  public logEmail!: string // login var email
-  public feedback!: any[] // feedback information
-  public regVals = { // registration vars
+  public feedback!: any[] // feedback data
+  public briefs!: any[] // briefs data
+  public progress!: any[] // progress data
+  public logVals = { // login values
+    username: '',
+    password: '',
+  }
+  public regVals = { // registration values
     firstname: '',
     lastname: '',
     email: '',
-    pass: '',
+    password: '',
   }
 
   constructor(private httpWorker: HttpWorkerService) {}
@@ -28,11 +32,7 @@ export class AdminComponent implements OnInit {
 
   // sending a login and requesting a field with a token
   public postLogin() {
-    let options = {
-      username: this.logEmail,
-      password: this.logPass,
-    }
-    this.httpWorker.postLogin(options)
+    this.httpWorker.postLogin(this.logVals)
     .subscribe((res: any) => {
       this.httpWorker.setLocal(res.headers.get('authorization'))
       this.getToken()
@@ -41,15 +41,8 @@ export class AdminComponent implements OnInit {
 
   // sending a registration
   public postRegistration() {
-    let options = {
-      firstname: this.regVals.firstname,
-      lastname: this.regVals.lastname,
-      email: this.regVals.email,
-      password: this.regVals.pass,
-    }
-    this.httpWorker.postRegistration(options).subscribe(() => {
-      this.toggle = false
-    })
+    this.httpWorker.postRegistration(this.regVals)
+    .subscribe(() => this.toggle = false)
   }
 
   // checking for token availability
@@ -58,8 +51,21 @@ export class AdminComponent implements OnInit {
   }
 
   // requesting all information from the server
-  public getAll() {
-    this.httpWorker.getFeedback().subscribe((res: any) => this.feedback = res)
+  public getAllFeedback() {
+    this.httpWorker.getFeedback()
+    .subscribe((res: any) => this.feedback = res)
+  }
+
+  // requesting all information from the server
+  public getAllBriefs() {
+    this.httpWorker.getActiveBriefs()
+    .subscribe((res: any) => this.briefs = res)
+  }
+
+  // requesting all information from the server
+  public getProgress() {
+    this.httpWorker.getProgress()
+    .subscribe((res: any) => this.progress = res)
   }
 
   public check(item: any) {
