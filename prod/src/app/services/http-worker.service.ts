@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class HttpWorkerService {
 
-  private url = 'http://netch.eu-central-1.elasticbeanstalk.com'
+  private url = 'http://netch-env-1.eba-2jpxc2x7.eu-central-1.elasticbeanstalk.com'
   private headers = {
     headers: new HttpHeaders({
       Authorization: this.getLocal() as string,
@@ -64,7 +64,7 @@ export class HttpWorkerService {
   }
 
   public postRegistration(options: any) {
-    return this.http.post(`${this.url}/api/registration`, options, this.headers)
+    return this.http.post(`${this.url}/api/registration`, options)
   }
 
   public postLogin(options: any) {

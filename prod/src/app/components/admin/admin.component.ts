@@ -8,20 +8,28 @@ import { HttpWorkerService } from 'src/app/services/http-worker.service';
 })
 export class AdminComponent implements OnInit {
 
-  public adminActive = false // open admin page
-  public toggle = false // toggle login / registration
-  public feedback!: any[] // feedback data
-  public briefs!: any[] // briefs data
-  public progress!: any[] // progress data
-  public logVals = { // login values
+  public adminActive = false
+  public toggle = false
+  public toggleTables = 'feedback'
+  public feedback!: any[]
+  public briefs!: any[]
+  public progress!: any[]
+  public logVals = {
     username: '',
     password: '',
   }
-  public regVals = { // registration values
+  public regVals = {
     firstname: '',
     lastname: '',
     email: '',
     password: '',
+  }
+  public adminModalVars = {
+    active: false,
+    toggle: '',
+    header: '',
+    progress: {},
+    brief: {},
   }
 
   constructor(private httpWorker: HttpWorkerService) {}
@@ -30,42 +38,58 @@ export class AdminComponent implements OnInit {
     this.getToken()
   }
 
-  // sending a login and requesting a field with a token
   public postLogin() {
     this.httpWorker.postLogin(this.logVals)
     .subscribe((res: any) => {
       this.httpWorker.setLocal(res.headers.get('authorization'))
-      this.getToken()
+      setTimeout(() => this.getToken(), 0)
     })
   }
 
-  // sending a registration
   public postRegistration() {
     this.httpWorker.postRegistration(this.regVals)
     .subscribe(() => this.toggle = false)
   }
 
-  // checking for token availability
   public getToken() {
     this.adminActive = this.httpWorker.getLocal() != null;
   }
 
-  // requesting all information from the server
   public getAllFeedback() {
     this.httpWorker.getFeedback()
     .subscribe((res: any) => this.feedback = res)
   }
 
-  // requesting all information from the server
   public getAllBriefs() {
     this.httpWorker.getActiveBriefs()
     .subscribe((res: any) => this.briefs = res)
   }
 
-  // requesting all information from the server
+  public removeBrief(id: number) {
+    this.httpWorker.removeBrief(id)
+    .subscribe((res: any) => {
+      this.briefs = this.briefs.filter((item: any) => item.id !== res)
+    })
+  }
+
   public getProgress() {
     this.httpWorker.getProgress()
     .subscribe((res: any) => this.progress = res)
+  }
+
+  public details(item: any, toggle: string, header: string) {
+    this.adminModalVars.active = true
+    this.adminModalVars.toggle = toggle
+    this.adminModalVars.header = header
+    this.adminModalVars.brief = item
+
+    document.body.style.overflow = 'hidden'
+  } 
+
+  public closeAdminModal() {
+    this.adminModalVars.active = false
+
+    document.body.style.overflow = 'auto'
   }
 
   public check(item: any) {

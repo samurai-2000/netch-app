@@ -1,9 +1,10 @@
 <section *ngIf='adminActive; else auth' class="s1">
-    <button (click)='getAllFeedback()' class="btn">Звонки</button>
-    <button (click)='getAllBriefs()' class="btn">Брифы</button>
-    <button (click)='getProgress()' class="btn">Прогресс</button>
-    <h3>Обратная связь</h3>
-    <div class="table-container">
+    <button (click)='getAllFeedback(); toggleTables = "feedback"' class="btn">Звонки</button>
+    <button (click)='getAllBriefs(); toggleTables = "briefs"' class="btn">Брифы</button>
+    <button (click)='getProgress(); toggleTables = "progress"' class="btn">Прогресс</button>
+
+    <div *ngIf='toggleTables == "feedback"' class="table-container">
+        <h3>Обратная связь</h3>
         <table>
             <thead>
                 <tr>
@@ -30,8 +31,8 @@
             </tbody>
         </table>
     </div>
-    <h3>Брифы</h3>
-    <div class="table-container">
+    <div *ngIf='toggleTables == "briefs"' class="table-container">
+        <h3>Брифы</h3>
         <table>
             <thead>
                 <tr>
@@ -51,14 +52,15 @@
                     <td>{{ item.phone }}</td>
                     <td>{{ item.createdAt }}</td>
                     <td>
-                        <button class="btn btn-more"><i class="material-icons">apps</i></button>
+                        <button (click)='details(item, "brief", "Бриф")' class="btn btn-more"><i class="material-icons">apps</i></button>
+                        <button (click)='removeBrief(item.id)' class="btn btn-clear" style="margin-left: 1rem;"><i class="material-icons">close</i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <h3>Прогресс</h3>
-    <div class="table-container">
+    <div *ngIf='toggleTables == "progress"' class="table-container">
+        <h3>Прогресс</h3>
         <table>
             <thead>
                 <tr>
@@ -85,6 +87,7 @@
         </table>
     </div>
 </section>
+
 <ng-template #auth>
     <section *ngIf='toggle == false' class="l1">
         <form class="form">
@@ -99,15 +102,23 @@
     <section *ngIf='toggle' class="l1">
         <form class="form">
             <span>Имя</span>
-            <input type="text" [(ngModel)]='regVals.firstname'>
+            <input type="text" name="firstname" [(ngModel)]='regVals.firstname'>
             <span>Фамилия</span>
-            <input type="text" [(ngModel)]='regVals.lastname'>
+            <input type="text" name="lastname" [(ngModel)]='regVals.lastname'>
             <span>Почта</span>
-            <input type="text" [(ngModel)]='regVals.email'>
+            <input type="text" name="email" [(ngModel)]='regVals.email'>
             <span>Пароль</span>
-            <input type="password" [(ngModel)]='regVals.password'>
+            <input type="password" name="pass" [(ngModel)]='regVals.password'>
             <button (click)='postRegistration()' class="btn">Отправить</button>
             <button (click)='toggle = false' class="btn btn-2">Войти</button>
         </form>
     </section>
 </ng-template>
+
+<ui-admin-modal 
+[adminModalActive]='adminModalVars.active'
+[toggle]='adminModalVars.toggle'
+[adminModalHeader]='adminModalVars.header'
+[progressUser]='adminModalVars.progress'
+[briefUser]='adminModalVars.brief'>
+</ui-admin-modal>

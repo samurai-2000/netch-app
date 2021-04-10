@@ -6,116 +6,115 @@ section {min-height: 100vh;}
 .s1 {
   user-select: none;
 
-    .track-box {
+  .track-box {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+    min-height: 50vh;
+    margin: 2rem auto; padding: 1rem;
+    background: tt($dark, 0.7);
+    border-radius: 1rem;
+  
+    .track-header {
+      background: tt($dark, 0.5);
+      border-radius: 1rem;
+      padding: 0.5rem 0;
+
+      h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $light;
+      }
+    }
+
+    .track-body {
       display: flex;
       flex-direction: column;
-      flex: 100%;
-      min-height: 50vh;
-      margin: 2rem auto; padding: 1rem;
+      flex: auto;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 2rem 1rem 1rem;
       background: tt($dark, 0.7);
       border-radius: 1rem;
+    }
+
+    span {
+      display: block;
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: $light;
+    }
+    span.invalid {
+      margin-top: 2rem;
+      color: $red;
+    }
     
-        .track-header {
-          background: tt($dark, 0.5);
-          border-radius: 1rem;
-          padding: 0.5rem 0;
-    
-          h1 {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: $light;
-          }
-        }
-    
-        .track-body {
-          display: flex;
-          flex-direction: column;
-          flex: auto;
-          align-items: center;
-          width: 100%;
-          margin-top: 1rem;
-          padding: 2rem 1rem 1rem;
-          background: tt($dark, 0.7);
-          border-radius: 1rem;
-    
-        }
+    .point-container {flex: auto;}
 
-        span {
-          display: block;
-          text-align: center;
-          margin-top: 4rem;
-          margin-bottom: 1rem;
-          font-weight: 600;
-          font-size: 1.5rem;
-          color: $light;
-        }
-        span.invalid {
-          margin-top: 2rem;
-          color: $red;
-        }
-        
-        .point-container {flex: auto;}
+    .track-point {
+      width: 150px;
+      height: 150px;
+      margin: 2rem auto;
+      background: $indigo;
+      border-radius: 50%;
+      transition: 0.2s;
+      cursor: pointer;
 
-        .track-point {
-          width: 150px;
-          height: 150px;
-          margin: 2rem auto;
-          background: $indigo;
-          border-radius: 50%;
-          transition: 0.2s;
-          cursor: pointer;
-
-          &:hover {
-            box-shadow: 0 0 0 15px tt($indigo, 0.7);
-          }
-        }
-        .track-point:last-child {margin-bottom: 4rem;}
-
-        .track-active {
-          background: $mint;
-
-          &:hover {
-            box-shadow: 0 0 0 15px tt($mint, 0.7);
-          }
-        }
-        
-        input {
-          display: block;
-          width: 100%;
-          max-width: 400px;
-          margin: 1rem auto;
-          height: 35px;
-          border: 2px solid tt($dark, 0.3); outline: none; border-radius: 2rem;
-          padding: 1rem;
-          text-transform: uppercase;
-          text-align: center;
-
-          &:focus {
-            border: 2px solid $indigo;
-          }
-          &:focus + i {
-            color: $indigo;
-          }
-          &:focus::placeholder {
-            color: transparent;
-          }
-        }
-
-        .btn {
-          height: 50px;
-          padding: 0 20px;
-          margin: 2rem 0;
-          background: $mint;
-          border: none; outline: none; border-radius: 1rem;
-          color: $light;
-          font-weight: 500;
-          transition: 0.2s;
-          cursor: pointer;
-    
-          &:hover, &:focus {
-            box-shadow: 0 0 0 5px tt($mint, 0.7);
-          }
-        }
+      &:hover {
+        box-shadow: 0 0 0 15px tt($indigo, 0.7);
       }
+    }
+    .track-point:last-child {margin-bottom: 4rem;}
+
+    .track-active {
+      background: $mint;
+
+      &:hover {
+        box-shadow: 0 0 0 15px tt($mint, 0.7);
+      }
+    }
+    
+    input {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem auto;
+      height: 35px;
+      border: 2px solid tt($dark, 0.3); outline: none; border-radius: 2rem;
+      padding: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:focus {
+        border: 2px solid $indigo;
+      }
+      &:focus + i {
+        color: $indigo;
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }
+    }
+
+    .btn {
+      height: 50px;
+      padding: 0 20px;
+      margin: 2rem 0;
+      background: $mint;
+      border: none; outline: none; border-radius: 1rem;
+      color: $light;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        box-shadow: 0 0 0 5px tt($mint, 0.7);
+      }
+    }
+  }
 }

@@ -1,0 +1,65 @@
+<div *ngIf='adminModalActive' class="modal-wrapper">
+    <div class="modal-box">
+        <i (click)='close()' class="material-icons btn-close">close</i>
+        <div class="modal-header">{{adminModalHeader}}</div>
+        <div class="modal-body">
+            <div *ngIf='toggle == "progress"'>
+
+            </div>
+            <div *ngIf='toggle == "content"'>
+
+            </div>
+            <div *ngIf='toggle == "brief"'>
+                <ul>
+                    <span>Ф.И.О.:</span> 
+                    <li>{{ briefUser.name }}</li>
+
+                    <span>Почта:</span> 
+                    <li>{{ briefUser.email }}</li>
+
+                    <span>Телефон:</span> 
+                    <li>{{ briefUser.phone }}</li>
+
+                    <span>Цели:</span> 
+                    <li>{{ briefUser.goals }}</li>
+
+                    <span>Требования:</span> 
+                    <li>{{ briefUser.requirements }}</li>
+
+                    <span>Результаты проекта:</span> 
+                    <li>{{ briefUser.results }}</li>
+
+                    <span>Ограничения:</span> 
+                    <li>{{ briefUser.limitations }}</li>
+
+                    <span>Допущения:</span>
+                    <li>{{ briefUser.assumptions }}</li>
+
+                    <span>Вид деятельности:</span>
+                    <li>{{ briefUser.kindOfActivity }}</li>
+
+                    <span>Есть ли макет сайта:</span> 
+                    <li>{{ briefUser.design }}</li>
+
+                    <span>Есть ли сайт:</span> 
+                    <li>{{ briefUser.site }}</li>
+
+                    <span>Продукция:</span> 
+                    <li>{{ briefUser.products }}</li>
+
+                    <span>Услуги:</span> 
+                    <li>{{ briefUser.services }}</li>
+
+                    <span>Нужна ли помощь в создании логотипа:</span> 
+                    <li>{{ briefUser.logo }}</li>
+
+                    <span>Есть ли контент:</span> 
+                    <li>{{ briefUser.content }}</li>
+                    
+                    <span>Основные разделы:</span>
+                    <li>{{ briefUser.sections }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
