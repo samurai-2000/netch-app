@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BriefService } from 'src/app/services/brief.service';
+import { TrackingService } from 'src/app/services/tracking.service';
 
 @Component({
   selector: 'brief',
@@ -28,14 +30,22 @@ export class BriefComponent implements OnInit {
     sections: '',
   }
 
-  constructor(private brief: BriefService) { }
+  constructor(
+    private brief: BriefService,
+    private track: TrackingService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0)
   }
 
   public postBrief() {
-    this.brief.postBrief(this.briefVals).subscribe((res: any) => console.log(res))
+    this.brief.postBrief(this.briefVals)
+    .subscribe((res: any) => {
+      this.track.setLocalTrack(res)
+      this.router.navigate(['/tracking'])
+    })
   }
 
 }

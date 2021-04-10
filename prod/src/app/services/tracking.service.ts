@@ -13,4 +13,12 @@ export class TrackingService {
   public getTrack(id: number) {
     return this.http.get(`${this.url}/api/progress/${id}`)
   }
+
+  public setLocalTrack(track: number) { 
+    localStorage.setItem('TRACK', String(track))
+  }
+
+  public getLocalTrack() {
+    return localStorage.getItem('TRACK')
+  }
 }
