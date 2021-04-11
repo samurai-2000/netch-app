@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpWorkerService } from 'src/app/services/http-worker.service';
+import { TrackingService } from 'src/app/services/tracking.service';
 
 @Component({
   selector: 'admin',
@@ -28,11 +29,13 @@ export class AdminComponent implements OnInit {
     active: false,
     toggle: '',
     header: '',
-    progress: {},
-    brief: {},
+    data: {},
   }
 
-  constructor(private httpWorker: HttpWorkerService) {}
+  constructor(
+    private httpWorker: HttpWorkerService,
+    private track: TrackingService
+  ) {}
 
   ngOnInit(): void {
     this.getToken()
@@ -76,12 +79,12 @@ export class AdminComponent implements OnInit {
     this.httpWorker.getProgress()
     .subscribe((res: any) => this.progress = res)
   }
-
-  public details(item: any, toggle: string, header: string) {
+  
+  public details(toggle: string, header: string, item?: any) {
     this.adminModalVars.active = true
     this.adminModalVars.toggle = toggle
     this.adminModalVars.header = header
-    this.adminModalVars.brief = item
+    this.adminModalVars.data = item
 
     document.body.style.overflow = 'hidden'
   } 
@@ -90,6 +93,11 @@ export class AdminComponent implements OnInit {
     this.adminModalVars.active = false
 
     document.body.style.overflow = 'auto'
+  }
+
+  public logOut() {
+    localStorage.removeItem('JWT_TOKEN')
+    this.adminActive = false
   }
 
   public check(item: any) {

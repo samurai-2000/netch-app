@@ -36,12 +36,45 @@ section {min-height: 100vh;}
             margin-top: 1rem;
 
             .card {
+                display: flex;
                 flex: 1 1 auto;
+                flex-direction: column;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
                 color: $light;
+
+                h2 {
+                    text-align: center;
+                    margin: 2rem 0;
+                    font-size: 1.5rem;
+                }
+                h3 {
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    font-size: 1.3rem;
+                }
+
+                .img-box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 100%;
+                        max-width: 300px;
+                        margin: 1rem 0;
+                        margin-bottom: 3rem;
+                        border-radius: 50%;
+                        transition: 0.2s;
+                        cursor: pointer;
+
+                        &:hover, &:focus {
+                            box-shadow: 0 0 0 15px tt($indigo, 0.7);
+                        }
+                    }
+                }
             }
         }
     }

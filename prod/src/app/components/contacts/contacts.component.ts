@@ -21,7 +21,7 @@ export class ContactsComponent implements OnInit{
   }
 
   openModal() {
-    this.httpWorker.getTextContent('main').subscribe((res: any) => {
+    this.httpWorker.getTextContent('contacts').subscribe((res: any) => {
       this.app.openModal(res[0].header,res[0].body)
     })
   }

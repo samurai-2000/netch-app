@@ -53,6 +53,13 @@ section {min-height: 100vh;}
             box-shadow: 0 0 0 5px tt($mint, 0.7);
         }
     }
+    .btn:nth-child(4) {
+        background: $indigo;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($indigo, 0.7);
+        }
+    }
 
     .btn-clear {
         margin: 0;

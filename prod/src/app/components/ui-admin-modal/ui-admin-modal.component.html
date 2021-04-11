@@ -1,63 +1,121 @@
-<div *ngIf='adminModalActive' class="modal-wrapper">
+<div (click)='outClick($event)' *ngIf='adminModalActive' class="modal-wrapper">
     <div class="modal-box">
         <i (click)='close()' class="material-icons btn-close">close</i>
         <div class="modal-header">{{adminModalHeader}}</div>
         <div class="modal-body">
             <div *ngIf='toggle == "progress"'>
+                <ul>
+                    <span class="progress-title">Бриф</span>
+                    <li 
+                    [class.active]='data.brief' 
+                    class="point"></li>
 
+                    <span class="progress-title">Техническое задание</span> 
+                    <li 
+                    (click)='changeProgress("technicalTask", data.id)'
+                    [class.active]='data.technicalTask' 
+                    class="point"></li>
+
+                    <span class="progress-title">Прототип</span> 
+                    <li 
+                    (click)='changeProgress("prototype", data.id)'
+                    [class.active]='data.prototype' 
+                    class="point"></li>
+
+                    <span class="progress-title">Макет</span> 
+                    <li 
+                    (click)='changeProgress("siteModel", data.id)'
+                    [class.active]='data.siteModel' 
+                    class="point"></li>
+
+                    <span class="progress-title">Разработка</span> 
+                    <li 
+                    (click)='changeProgress("frontBack", data.id)'
+                    [class.active]='data.frontBack' 
+                    class="point"></li>
+
+                    <span class="progress-title">Тестирование</span> 
+                    <li 
+                    (click)='changeProgress("testing", data.id)'
+                    [class.active]='data.testing' 
+                    class="point"></li>
+
+                    <span class="progress-title">Оплата</span> 
+                    <li 
+                    (click)='changeProgress("payment", data.id)'
+                    [class.active]='data.payment' 
+                    class="point"></li>
+                    
+                    <span class="progress-title">Заказ готов</span>
+                    <li 
+                    (click)='changeProgress("result", data.id)'
+                    [class.active]='data.result' 
+                    class="point"></li>
+                </ul>
             </div>
             <div *ngIf='toggle == "content"'>
-
+                <form>
+                    <span>Расположение</span>
+                    <input type="text" name="header" [(ngModel)]='textContentData.name'>
+                    <span>Заголовок</span>
+                    <input type="text" name="header" [(ngModel)]='textContentData.header'>
+                    <span>Тело</span>
+                    <textarea type="text" name="body" [(ngModel)]='textContentData.body'></textarea>
+                    <span>Изображение</span>
+                    <input #img type="file" name="image">
+                    <button (click)='postContent(img)' class="btn">Отправить</button>
+                    <button type="reset" class="btn btn-сlear">Очистить</button>
+                </form>
             </div>
             <div *ngIf='toggle == "brief"'>
                 <ul>
                     <span>Ф.И.О.:</span> 
-                    <li>{{ briefUser.name }}</li>
+                    <li>{{ data.name }}</li>
 
                     <span>Почта:</span> 
-                    <li>{{ briefUser.email }}</li>
+                    <li>{{ data.email }}</li>
 
                     <span>Телефон:</span> 
-                    <li>{{ briefUser.phone }}</li>
+                    <li>{{ data.phone }}</li>
 
                     <span>Цели:</span> 
-                    <li>{{ briefUser.goals }}</li>
+                    <li>{{ data.goals }}</li>
 
                     <span>Требования:</span> 
-                    <li>{{ briefUser.requirements }}</li>
+                    <li>{{ data.requirements }}</li>
 
                     <span>Результаты проекта:</span> 
-                    <li>{{ briefUser.results }}</li>
+                    <li>{{ data.results }}</li>
 
                     <span>Ограничения:</span> 
-                    <li>{{ briefUser.limitations }}</li>
+                    <li>{{ data.limitations }}</li>
 
                     <span>Допущения:</span>
-                    <li>{{ briefUser.assumptions }}</li>
+                    <li>{{ data.assumptions }}</li>
 
                     <span>Вид деятельности:</span>
-                    <li>{{ briefUser.kindOfActivity }}</li>
+                    <li>{{ data.kindOfActivity }}</li>
 
                     <span>Есть ли макет сайта:</span> 
-                    <li>{{ briefUser.design }}</li>
+                    <li>{{ data.design }}</li>
 
                     <span>Есть ли сайт:</span> 
-                    <li>{{ briefUser.site }}</li>
+                    <li>{{ data.site }}</li>
 
                     <span>Продукция:</span> 
-                    <li>{{ briefUser.products }}</li>
+                    <li>{{ data.products }}</li>
 
                     <span>Услуги:</span> 
-                    <li>{{ briefUser.services }}</li>
+                    <li>{{ data.services }}</li>
 
                     <span>Нужна ли помощь в создании логотипа:</span> 
-                    <li>{{ briefUser.logo }}</li>
+                    <li>{{ data.logo }}</li>
 
                     <span>Есть ли контент:</span> 
-                    <li>{{ briefUser.content }}</li>
+                    <li>{{ data.content }}</li>
                     
                     <span>Основные разделы:</span>
-                    <li>{{ briefUser.sections }}</li>
+                    <li>{{ data.sections }}</li>
                 </ul>
             </div>
         </div>

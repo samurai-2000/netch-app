@@ -2,6 +2,8 @@
     <button (click)='getAllFeedback(); toggleTables = "feedback"' class="btn">Звонки</button>
     <button (click)='getAllBriefs(); toggleTables = "briefs"' class="btn">Брифы</button>
     <button (click)='getProgress(); toggleTables = "progress"' class="btn">Прогресс</button>
+    <button (click)='details("content", "Контент")' class="btn">Добавить контент</button>
+    <button (click)='logOut()' class="btn btn-clear">Выйти</button>
 
     <div *ngIf='toggleTables == "feedback"' class="table-container">
         <h3>Обратная связь</h3>
@@ -45,14 +47,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let item of briefs; let i = index'>
-                    <td>{{ i+1 }}</td>
+                <tr *ngFor='let item of briefs'>
+                    <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.email }}</td>
                     <td>{{ item.phone }}</td>
                     <td>{{ item.createdAt }}</td>
                     <td>
-                        <button (click)='details(item, "brief", "Бриф")' class="btn btn-more"><i class="material-icons">apps</i></button>
+                        <button (click)='details("brief", "Бриф", item)' class="btn btn-more"><i class="material-icons">apps</i></button>
                         <button (click)='removeBrief(item.id)' class="btn btn-clear" style="margin-left: 1rem;"><i class="material-icons">close</i></button>
                     </td>
                 </tr>
@@ -74,13 +76,13 @@
             </thead>
             <tbody>
                 <tr *ngFor='let item of progress; let i = index'>
-                    <td>{{ i+1 }}</td>
+                    <td>{{ item.userBrief.id }}</td>
                     <td>{{ item.userBrief.name }}</td>
                     <td>{{ item.userBrief.email }}</td>
                     <td>{{ item.userBrief.phone }}</td>
                     <td>{{ item.userBrief.createdAt }}</td>
                     <td>
-                        <button class="btn btn-more"><i class="material-icons">apps</i></button>
+                        <button (click)='details("progress", "Прогресс", item)' class="btn btn-more"><i class="material-icons">apps</i></button>
                     </td>
                 </tr>
             </tbody>
@@ -119,6 +121,5 @@
 [adminModalActive]='adminModalVars.active'
 [toggle]='adminModalVars.toggle'
 [adminModalHeader]='adminModalVars.header'
-[progressUser]='adminModalVars.progress'
-[briefUser]='adminModalVars.brief'>
+[data]='adminModalVars.data'>
 </ui-admin-modal>

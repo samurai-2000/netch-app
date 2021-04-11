@@ -7,24 +7,23 @@ import { Injectable } from '@angular/core';
 export class HttpWorkerService {
 
   private url = 'http://netch-env-1.eba-2jpxc2x7.eu-central-1.elasticbeanstalk.com'
-  private headers = {
-    headers: new HttpHeaders({
-      Authorization: this.getLocal() as string,
-    }),
-  }
 
   constructor(private http: HttpClient) {}
 
   public getProgress() {
-    return this.http.get(`${this.url}/admin/api/progress`, this.headers)
+    return this.http.get(`${this.url}/admin/api/progress/active`, this.getHeaders())
+  }
+
+  public postProgress(options: any) {
+    return this.http.post(`${this.url}/admin/api/progress/change`, options, this.getHeaders())
   }
 
   public getActiveBriefs() {
-    return this.http.get(`${this.url}/admin/api/briefs/active`, this.headers)
+    return this.http.get(`${this.url}/admin/api/briefs/active`, this.getHeaders())
   }
 
   public removeBrief(id: number) {
-    return this.http.delete(`${this.url}/admin/api/briefs/${id}`, this.headers)
+    return this.http.delete(`${this.url}/admin/api/briefs/${id}`, this.getHeaders())
   }
 
   public getTextContentAll() {
@@ -36,15 +35,15 @@ export class HttpWorkerService {
   }
 
   public postTextContent(options: any) {
-    return this.http.post(`${this.url}/admin/api/textContent/add`, options, this.headers)
+    return this.http.post(`${this.url}/admin/api/textContent/add`, options, this.getHeaders())
   }
 
   public removeTextContent(id: number) {
-    return this.http.delete(`${this.url}/admin/api/textContent/${id}`, this.headers)
+    return this.http.delete(`${this.url}/admin/api/textContent/${id}`, this.getHeaders())
   }
 
   public getFeedback() {
-    return this.http.get(`${this.url}/admin/api/feedback`, this.headers)
+    return this.http.get(`${this.url}/admin/api/feedback`, this.getHeaders())
   }
 
   public postFeedback(options: any) {
@@ -52,15 +51,15 @@ export class HttpWorkerService {
   }
 
   public getImages(name: any) {
-    return this.http.get(`${this.url}/api/front/imageContent/${name}`, this.headers)
+    return this.http.get(`${this.url}/api/front/imageContent/${name}`, this.getHeaders())
   }
 
   public postImages(options: any) {
-    return this.http.post(`${this.url}/admin/api/imageContent/add`, options, this.headers)
+    return this.http.post(`${this.url}/admin/api/imageContent/add`, options, this.getHeaders())
   }
 
   public removeImages(id: number) {
-    return this.http.delete(`${this.url}/admin/api/imageContent/${id}`, this.headers)
+    return this.http.delete(`${this.url}/admin/api/imageContent/${id}`, this.getHeaders())
   }
 
   public postRegistration(options: any) {
@@ -73,5 +72,8 @@ export class HttpWorkerService {
 
   public setLocal(token: string) { localStorage.setItem('JWT_TOKEN', token) }
   public getLocal() { return localStorage.getItem('JWT_TOKEN') }
+  public getHeaders() { return {
+    headers: new HttpHeaders({ Authorization: this.getLocal() as string,}),
+  }}
 
 }
