@@ -49,6 +49,8 @@ section {min-height: 100vh;}
       font-size: 1.5rem;
       color: $light;
     }
+    span.track-title {cursor: pointer;}
+
     span.invalid {
       margin-top: 2rem;
       color: $red;

@@ -1,12 +1,14 @@
 <section class="s1">
     <div class="box-logo">
-        <img draggable="false" src="\assets\svgs\LOGO.svg" alt="LOGO">
+        <img 
+        [@leftRight]="triggerS1 ? 'opacity' : 'transparency'" 
+        draggable="false" src="\assets\svgs\LOGO.svg" alt="LOGO">
     </div>
     <div class="box-title">
         <div class="box-title_container">
-            <h1>Нужен сайт?</h1>
-            <div class="line"></div>
-            <p>наша команда профессионалов<br> 
+            <h1 [@rightLeft]="triggerS1 ? 'opacity' : 'transparency'" >Нужен сайт?</h1>
+            <div [@lineW]="triggerS1 ? 'run' : 'wait'" class="line"></div>
+            <p [@leftRight]="triggerS1 ? 'opacity' : 'transparency'">наша команда профессионалов<br> 
                 поможет вам в решении<br> 
                 поставленной задачи</p>
         </div>
@@ -14,42 +16,60 @@
 </section>
 <section class="s2">
     <div class="box-title">
-        <h2>
-            <div class="line"></div>
+        <h2 [@leftRight]="triggerS2 ? 'opacity' : 'transparency'">
+            <div [@lineH]="triggerS2 ? 'run' : 'wait'" class="line"></div>
             Высокие<br> 
             технологии</h2>
     </div>
 </section>
 <section class="s3">
+    <!-- <div class="box-points">
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </div> -->
+</section>
+<section class="s4">
     <div class="box-title">
-        <h2>Низкие цены</h2>
-        <div class="line"></div>
-        <ul class="list">
+        <h2 [@bottomTop]="triggerS4 ? 'opacity' : 'transparency'">Низкие цены</h2>
+        <div [@lineW]="triggerS4 ? 'run' : 'wait'" class="line"></div>
+        <ul [@leftRight]="triggerS4 ? 'opacity' : 'transparency'" class="list">
             <li>Сайт-визитка <span>/</span> от 5000₽</li>
             <li>Лендинг <span>/</span> от 8000₽</li>
             <li>Официальный сайт <span>/</span> от 10000₽</li>
             <li>Интеренет магазин <span>/</span> от 15000₽</li>
         </ul>
-        <button routerLink='/brief' class="btn">Заказать</button>
-    </div>
-</section>
-<section class="s4">
-    <div class="box-logo">
-        <img draggable="false" src="\assets\svgs\clocks.svg" alt="clocks">
-    </div>
-    <div class="box-title">
-        <div class="line"></div>
-        <h2>В короткие сроки</h2>
-        <h3>от 5 дней</h3>
+        <button [@opacity]="triggerS4 ? 'opacity' : 'transparency'" routerLink='/brief' class="btn">Заказать</button>
     </div>
 </section>
 <section class="s5">
+    <div class="box-logo">
+        <img 
+        [@bottomTop]="triggerS5 ? 'opacity' : 'transparency'" 
+        draggable="false" src="\assets\svgs\clocks.svg" alt="clocks">
+    </div>
+    <div class="box-title">
+        <div [@lineW]="triggerS5 ? 'run' : 'wait'" class="line"></div>
+        <h2 [@leftRight]="triggerS5 ? 'opacity' : 'transparency'">В короткие сроки</h2>
+        <h3 [@rightLeft]="triggerS5 ? 'opacity' : 'transparency'">от 5 дней</h3>
+    </div>
+</section>
+<section class="s6">
     <h4>Заказать обратную связь</h4>
     <div class="box-form">
         <form>
-            <label><input [(ngModel)]='feedbackVals.name' name="txt" type="text"><i class="material-icons">person</i></label>
-            <label><input [(ngModel)]='feedbackVals.email' name="call" type="tel"><i class="material-icons">call</i></label>
-            <label><input [(ngModel)]='feedbackVals.phone' name="mail" type="email"><i class="material-icons">email</i></label>
+            <label><input 
+                [(ngModel)]='feedbackVals.name' 
+                name="txt" type="text"><i class="material-icons">person</i></label>
+            <label><input 
+                [(ngModel)]='feedbackVals.email' 
+                name="call" type="tel"><i class="material-icons">call</i></label>
+            <label><input 
+                [(ngModel)]='feedbackVals.phone' 
+                name="mail" type="email"><i class="material-icons">email</i></label>
+
             <button (click)='postFeedback()' class="btn">Отправить</button>
             <button class="btn btn-reset" type="reset">Очистить</button>
         </form>

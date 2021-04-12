@@ -42,7 +42,7 @@ export class TrackingComponent implements OnInit {
   }
 
   public dischargeTrack() {
-    localStorage.removeItem('TRACK')
+    sessionStorage.removeItem('TRACK')
     this.trackActive = false
   }
 

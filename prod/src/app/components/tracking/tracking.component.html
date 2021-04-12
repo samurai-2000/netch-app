@@ -5,7 +5,7 @@
         </div>
         <div class="track-body">
             <div *ngIf='trackActive; else track' class="point-container">
-                <span (click)='dischargeTrack()'>NETCH-{{trackData.id}}</span>
+                <span class="track-title" (click)='dischargeTrack()'>NETCH-{{trackData.id}}</span>
                 <div 
                 class="track-point" 
                 [class.track-active]='trackData.brief'></div>

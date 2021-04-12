@@ -10,16 +10,23 @@
                 <h3>Владислав</h3>
                 <div class="img-box">
                     <img 
+                    *ngIf='!load'
                     (click)='openHref("https://github.com/samurai-2000")' 
                     [src]="Neon_Samurai" alt="Neon_Samurai" >
+                    <div *ngIf='load' class="loader"></div>
                 </div> 
-            
+                
+            </div>
+            <div class="card">
+
                 <h2>Backend разработчик</h2>
                 <h3>Владимир</h3>
                 <div class="img-box">
                     <img 
+                    *ngIf='!load'
                     (click)='openHref("https://github.com/Wolodimir")' 
                     [src]="imgWolodimir" alt="Wolodimir">
+                    <div *ngIf='load' class="loader"></div>
                 </div>
                 
             </div>

@@ -74,6 +74,22 @@ section {min-height: 100vh;}
                             box-shadow: 0 0 0 15px tt($indigo, 0.7);
                         }
                     }
+
+                    .loader {
+                        width: 150px;
+                        height: 150px;
+                        background: $indigo;
+                        border-radius: 50%;
+                        animation: loading 0.3s ease-in infinite;
+
+                        @keyframes loading {
+                            0% {transform: scale(0.2);}
+                            25% {transform: scale(0.4);}
+                            50% {transform: scale(0.6);}
+                            75% {transform: scale(0.8);}
+                            100% {transform: scale(1);}
+                        }
+                    }
                 }
             }
         }

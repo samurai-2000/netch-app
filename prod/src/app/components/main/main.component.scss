@@ -1,7 +1,7 @@
 @import '/src/assets/plugins/vars';
 @import '/src/assets/plugins/functions';
 
-section {min-height: 100vh;}
+section {min-height: 100vh; user-select: none;}
 
 .s1 {
     display: flex;
@@ -95,6 +95,29 @@ section {min-height: 100vh;}
 
 .s3 {
     display: flex;
+    .box-points {
+        display: flex;
+        flex: auto;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .point {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background: $indigo;
+            border-radius: 1rem;
+
+        }
+        // .point:nth-child(3) {align-self: flex-start;}
+        // .point:nth-child(2) {align-self: center;}
+        // .point:nth-child(1) {align-self: flex-end;}
+    }
+}
+
+.s4 {
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -173,8 +196,7 @@ section {min-height: 100vh;}
     }
 }
 
-.s4 {
-    min-height: 75vh;
+.s5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,15 +228,6 @@ section {min-height: 100vh;}
             color: $light;
             margin-top: 2rem;
 
-            @media (max-width: 768px) {
-                font-size: 1.5rem;
-            }
-            @media (max-width: 550px) {
-                font-size: 1.2rem;
-            }
-            @media (max-width: 320px) {
-                font-size: 1rem;
-            }
         }
 
         .line {
@@ -239,15 +252,15 @@ section {min-height: 100vh;}
     }
 }
 
-.s5 {
+.s6 {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 50vh;
 
     background: url('/assets/svgs/bg-3.svg') center;
     background-size: 100%;
+    background-repeat: no-repeat;
 
     h4 {
         margin-bottom: 2rem;

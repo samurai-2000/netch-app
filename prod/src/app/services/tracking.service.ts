@@ -15,10 +15,10 @@ export class TrackingService {
   }
 
   public setLocalTrack(track: number) { 
-    localStorage.setItem('TRACK', String(track))
+    sessionStorage.setItem('TRACK', String(track))
   }
 
   public getLocalTrack() {
-    return localStorage.getItem('TRACK')
+    return sessionStorage.getItem('TRACK')
   }
 }
