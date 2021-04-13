@@ -11,7 +11,7 @@ export class GithubComponent implements OnInit {
   private url = 'https://api.github.com/users'
 
   public load = true
-
+  
   public imgWolodimir!: string
   public Neon_Samurai!: string
 
@@ -24,11 +24,11 @@ export class GithubComponent implements OnInit {
   public getImgGithub() {
     this.http.get(`${this.url}/Wolodimir`)
     .subscribe((res: any) => this.imgWolodimir = res.avatar_url,
-    () => {false} ,() => setTimeout(() => this.load = false, 500))
+    () => {} ,() => setTimeout(() => this.load = false, 500))
 
     this.http.get(`${this.url}/samurai-2000`)
     .subscribe((res: any) => this.Neon_Samurai = res.avatar_url,
-    () => {false} ,() => setTimeout(() => this.load = false, 500))
+    () => {} ,() => setTimeout(() => this.load = false, 500))
   }
 
   public openHref(href: string) {

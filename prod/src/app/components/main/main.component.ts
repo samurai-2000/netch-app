@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
 
   public postFeedback() {
     this.httpWorker.postFeedback(this.feedbackVals)
-    .subscribe((res: any) => console.log(res))
+    .subscribe(() => {})
   }
 
   public startAnimate() {
@@ -46,14 +46,15 @@ export class MainComponent implements OnInit {
       this.s4 = document.querySelector('.s4')?.getBoundingClientRect()
       this.s5 = document.querySelector('.s5')?.getBoundingClientRect()
       
-      if (this.s2.y <= 200)
+      if (this.s2.y <= 300)
       this.triggerS2 = true 
-      if (this.s3.y <= 200)
+      if (this.s3.y <= 300)
       this.triggerS3 = true
-      if (this.s4.y <= 200)
+      if (this.s4.y <= 300)
       this.triggerS4 = true
-      if (this.s5.y <= 200)
+      if (this.s5.y <= 300)
       this.triggerS5 = true
+
     })
 
   }

@@ -118,5 +118,21 @@ section {min-height: 100vh;}
         box-shadow: 0 0 0 5px tt($mint, 0.7);
       }
     }
+
+    .loader {
+      width: 100px;
+      height: 100px;
+      background: $indigo;
+      border-radius: 50%;
+      animation: loading 0.3s ease-in infinite;
+
+      @keyframes loading {
+        0% {transform: scale(0.2);}
+        25% {transform: scale(0.4);}
+        50% {transform: scale(0.6);}
+        75% {transform: scale(0.8);}
+        100% {transform: scale(1);}
+      }
+    }
   }
 }

@@ -12,6 +12,7 @@ export class TrackingComponent implements OnInit {
   public trackData: any
   public trackActive = false
   public trackInvalid = false
+  public load = false
 
   constructor(
     private track: TrackingService,
@@ -24,11 +25,19 @@ export class TrackingComponent implements OnInit {
   }
 
   public getUserTrack(track = this.track.getLocalTrack()) {
+    this.load = true
     this.track.getTrack(Number(track))
     .subscribe((res: any) => {
+      this.load = false
       this.trackData = res
       this.trackActive = true
-    }, () => this.trackInvalid = true)
+      this.trackInvalid = false
+    }, () => {
+      setTimeout(() => {
+        this.load = false
+        this.trackInvalid = true
+      }, 500);
+    })
   }
 
   public checkTrack() {

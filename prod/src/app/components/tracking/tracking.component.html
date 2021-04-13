@@ -50,7 +50,8 @@
                 <span>Введите номер заказа</span>
                 <input #trackInput type="text" placeholder="NETCH-(номер заказа)">
                 <button (click)='getUserTrack(trackInput.value.substr(6))' class="btn">Отправить</button>
-                <span *ngIf='trackInvalid' class="invalid">Заказ не найден :(</span>
+                <span *ngIf='trackInvalid && !load' class="invalid">Заказ не найден :(</span>
+                <div *ngIf='load' class="loader"></div>
             </ng-template>
         </div>
     </div>
