@@ -1,7 +1,7 @@
 <section class="s1">
     <div class="box-content">
         <div class="box-title">
-            <h2>Наша команда разработчиков</h2>
+            <h1>Наша команда</h1>
         </div>
         <div class="box-info">
             <div class="card">
@@ -10,6 +10,7 @@
                 <h3>Владислав</h3>
                 <div class="img-box">
                     <img 
+                    draggable="false"
                     *ngIf='!load'
                     (click)='openHref("https://github.com/samurai-2000")'
                     [src]="Neon_Samurai" alt="Neon_Samurai" >
@@ -23,9 +24,24 @@
                 <h3>Владимир</h3>
                 <div class="img-box">
                     <img 
+                    draggable="false"
                     *ngIf='!load'
                     (click)='openHref("https://github.com/Wolodimir")' 
-                    [src]="imgWolodimir" alt="Wolodimir">
+                    [src]="Wolodimir" alt="Wolodimir">
+                    <div *ngIf='load' class="loader"></div>
+                </div>
+                
+            </div>
+            <div class="card">
+
+                <h2>Проектный менеджер</h2>
+                <h3>Иван</h3>
+                <div class="img-box">
+                    <img 
+                    draggable="false"
+                    *ngIf='!load'
+                    (click)='openHref("https://github.com/Ivan-Zhivodvorov")' 
+                    [src]="IvanZhivodvorov" alt="IvanZhivodvorov">
                     <div *ngIf='load' class="loader"></div>
                 </div>
                 

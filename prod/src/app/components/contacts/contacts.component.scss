@@ -4,13 +4,11 @@
 section {min-height: 100vh;}
 
 .s1 {
-    display: flex;
-    flex-wrap: wrap;
 
     .box-content {
         display: flex;
         flex-direction: column;
-        flex: 100%;
+        flex: auto;
         min-height: 50vh;
         margin: 2rem auto; padding: 1rem;
         background: tt($dark, 0.7);
@@ -39,7 +37,7 @@ section {min-height: 100vh;}
             margin-top: 1rem;
 
             .card {
-                flex: 1 1 auto;
+                flex: auto;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);

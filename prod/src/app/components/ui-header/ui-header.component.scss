@@ -128,5 +128,6 @@ header {
                 box-shadow: 0 0 0 5px tt($scarlet, 0.7);
             }
         }
+        .btnActive {box-shadow: 0 0 0 5px tt($scarlet, 0.7) !important;}
     }
 }

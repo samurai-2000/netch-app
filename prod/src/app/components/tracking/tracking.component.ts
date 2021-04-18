@@ -10,13 +10,13 @@ import { TrackingService } from 'src/app/services/tracking.service';
 export class TrackingComponent implements OnInit {
 
   public trackData: any
+  public trackValue = ''
   public trackActive = false
   public trackInvalid = false
   public load = false
 
   constructor(
     private track: TrackingService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +32,7 @@ export class TrackingComponent implements OnInit {
       this.trackData = res
       this.trackActive = true
       this.trackInvalid = false
+      this.trackValue = ""
     }, () => {
       setTimeout(() => {
         this.load = false

@@ -2,7 +2,6 @@
     <button (click)='getAllFeedback(); toggleTables = "feedback"' class="btn">Звонки</button>
     <button (click)='getAllBriefs(); toggleTables = "briefs"' class="btn">Брифы</button>
     <button (click)='getProgress(); toggleTables = "progress"' class="btn">Прогресс</button>
-    <button (click)='details("content", "Контент")' class="btn">Добавить контент</button>
     <button (click)='logOut()' class="btn btn-clear">Выйти</button>
 
     <div *ngIf='toggleTables == "feedback"' class="table-container">

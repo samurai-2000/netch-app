@@ -3,12 +3,30 @@
         <nav class="apps">
             <i (click)='toggleNavMenu()' class="material-icons navMenuTrigger">menu</i>
             <div class="links-box">
-                <a draggable="false" routerLink='/' class="link">Главная</a>
-                <a draggable="false" routerLink='/projects' routerLinkActive='active' class="link">Проекты</a>
-                <a draggable="false" routerLink='/services' routerLinkActive='active' class="link">Услуги</a>
-                <a draggable="false" routerLink='/contacts' routerLinkActive='active' class="link">Контакты</a>
-                <a draggable="false" routerLink='/info' routerLinkActive='active' class="link">Информация</a>
-                <a draggable="false" routerLink='/github' routerLinkActive='active' class="link">GitHub</a>
+
+                <a draggable="false" 
+                routerLink='/' class="link">Главная</a>
+
+                <a draggable="false" 
+                routerLink='/projects' 
+                routerLinkActive='active' class="link">Проекты</a>
+
+                <a draggable="false" 
+                routerLink='/services' 
+                routerLinkActive='active' class="link">Услуги</a>
+
+                <a draggable="false" 
+                routerLink='/contacts' 
+                routerLinkActive='active' class="link">Контакты</a>
+
+                <a draggable="false" 
+                routerLink='/info' 
+                routerLinkActive='active' class="link">Информация</a>
+
+                <a draggable="false" 
+                routerLink='/github' 
+                routerLinkActive='active' class="link">GitHub</a>
+
             </div>
             <div class="btn-box">
                 <button routerLink='/tracking' class="btn">Что с моим заказом?</button>
@@ -19,14 +37,33 @@
 
 <nav [@NavMenu]="slideNavMenu ? 'slide' : 'close'" class="nav-menu">
     <div class="nav-menu_apps">
-        <a (click)='toggleNavMenu()' routerLink='/' class="link">Главная</a>
-        <a (click)='toggleNavMenu()' routerLink='/projects' routerLinkActive='active' class="link">Проекты</a>
-        <a (click)='toggleNavMenu()' routerLink='/services' routerLinkActive='active' class="link">Услуги</a>
-        <a (click)='toggleNavMenu()' routerLink='/contacts' routerLinkActive='active' class="link">Контакты</a>
-        <a (click)='toggleNavMenu()' routerLink='/info' routerLinkActive='active' class="link">Информация</a>
-        <a (click)='toggleNavMenu()' routerLink='/github' routerLinkActive='active' class="link">GitHub</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/' class="link">Главная</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/projects' 
+        routerLinkActive='active' class="link">Проекты</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/services' 
+        routerLinkActive='active' class="link">Услуги</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/contacts' 
+        routerLinkActive='active' class="link">Контакты</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/info' 
+        routerLinkActive='active' class="link">Информация</a>
+
+        <a (click)='toggleNavMenu()' 
+        routerLink='/github' 
+        routerLinkActive='active' class="link">GitHub</a>
+        
     </div>
     <div class="btn-box">
-        <button (click)='toggleNavMenu()' routerLink='/tracking' class="btn">Что с моим заказом?</button>
+        <button (click)='toggleNavMenu()' 
+        routerLink='/tracking' class="btn">Что с моим заказом?</button>
     </div>
 </nav>

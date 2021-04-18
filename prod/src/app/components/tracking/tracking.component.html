@@ -6,6 +6,7 @@
         <div class="track-body">
             <div *ngIf='trackActive; else track' class="point-container">
                 <span class="track-title" (click)='dischargeTrack()'>NETCH-{{trackData.id}}</span>
+                <span>Бриф</span>
                 <div 
                 class="track-point" 
                 [class.track-active]='trackData.brief'></div>
@@ -48,7 +49,7 @@
 
             <ng-template #track>
                 <span>Введите номер заказа</span>
-                <input #trackInput type="text" placeholder="NETCH-(номер заказа)">
+                <input #trackInput (focus)='trackValue = "NETCH-"' [value]="trackValue" type="text" placeholder="NETCH-(номер заказа)">
                 <button (click)='getUserTrack(trackInput.value.substr(6))' class="btn">Отправить</button>
                 <span *ngIf='trackInvalid && !load' class="invalid">Заказ не найден :(</span>
                 <div *ngIf='load' class="loader"></div>

@@ -12,8 +12,9 @@ export class GithubComponent implements OnInit {
 
   public load = true
   
-  public imgWolodimir!: string
+  public Wolodimir!: string
   public Neon_Samurai!: string
+  public IvanZhivodvorov!: string
 
   constructor(private http: HttpClient) { }
 
@@ -23,11 +24,15 @@ export class GithubComponent implements OnInit {
 
   public getImgGithub() {
     this.http.get(`${this.url}/Wolodimir`)
-    .subscribe((res: any) => this.imgWolodimir = res.avatar_url,
+    .subscribe((res: any) => this.Wolodimir = res.avatar_url,
     () => {} ,() => setTimeout(() => this.load = false, 500))
 
     this.http.get(`${this.url}/samurai-2000`)
     .subscribe((res: any) => this.Neon_Samurai = res.avatar_url,
+    () => {} ,() => setTimeout(() => this.load = false, 500))
+
+    this.http.get(`${this.url}/Ivan-Zhivodvorov`)
+    .subscribe((res: any) => this.IvanZhivodvorov = res.avatar_url,
     () => {} ,() => setTimeout(() => this.load = false, 500))
   }
 

@@ -53,20 +53,6 @@
                     class="point"></li>
                 </ul>
             </div>
-            <div *ngIf='toggle == "content"'>
-                <form>
-                    <span>Расположение</span>
-                    <input type="text" name="header" [(ngModel)]='textContentData.name'>
-                    <span>Заголовок</span>
-                    <input type="text" name="header" [(ngModel)]='textContentData.header'>
-                    <span>Тело</span>
-                    <textarea type="text" name="body" [(ngModel)]='textContentData.body'></textarea>
-                    <span>Изображение</span>
-                    <input #img type="file" name="image">
-                    <button (click)='postContent(img)' class="btn">Отправить</button>
-                    <button type="reset" class="btn btn-сlear">Очистить</button>
-                </form>
-            </div>
             <div *ngIf='toggle == "brief"'>
                 <ul>
                     <span>Ф.И.О.:</span> 
