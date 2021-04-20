@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { lineH, lineW } from 'src/app/animations/line';
 import { bottomTop, leftRight, opacity, rightLeft } from 'src/app/animations/opacity';
@@ -29,9 +30,11 @@ export class MainComponent implements OnInit {
 
   constructor(
     private httpWorker: HttpWorkerService,
-    private router: Router
+    private router: Router,
+    private title: Title,
   ) { 
     this.startAnimate()
+    this.title.setTitle('Netch')
   }
 
   ngOnInit(): void {

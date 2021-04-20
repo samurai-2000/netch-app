@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'netch-github',
@@ -16,7 +17,12 @@ export class GithubComponent implements OnInit {
   public Neon_Samurai!: string
   public IvanZhivodvorov!: string
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private title: Title
+  ) {
+    this.title.setTitle('Наша команда')
+  }
 
   ngOnInit(): void {
     this.getImgGithub()

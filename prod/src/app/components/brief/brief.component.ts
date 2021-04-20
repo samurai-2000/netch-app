@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { BriefService } from 'src/app/services/brief.service';
 import { TrackingService } from 'src/app/services/tracking.service';
@@ -33,8 +34,11 @@ export class BriefComponent implements OnInit {
   constructor(
     private brief: BriefService,
     private track: TrackingService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private title: Title,
+  ) {
+    this.title.setTitle('Бриф')
+  }
 
   ngOnInit(): void {
     window.scrollTo(0, 0)

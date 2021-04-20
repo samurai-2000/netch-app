@@ -9,8 +9,8 @@ section {
 
     .box-content {
         display: flex;
+        flex: auto;
         flex-direction: column;
-        width: fit-content;
         min-height: 50vh;
         margin: 2rem auto; padding: 1rem;
         background: tt($dark, 0.7);
@@ -34,17 +34,43 @@ section {
             flex: 100%;
             flex-wrap: wrap;
             gap: 1rem;
-            width: 100%;
             margin-top: 1rem;
 
             .card {
-                flex: 1 270px;
+                display: flex;
+                flex-direction: column;
+                flex: 20%;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
                 color: $light;
+
+                h3 {font-size: 1.2rem; text-align: center;margin: 0.5rem 0;}
+                h3.one {color: $red;}
+                h3.two {color: $yellow;}
+                h3.tree {color: $mint;}
+                h3.four {color: $indigo;}
+
+                ul {
+                    padding: 0.5rem;
+
+                    span {
+                        display: block;
+                        margin-top: 1rem;
+                    }
+                    span:nth-child(1) {margin: 0;}
+
+                    li {
+                        margin: 0.25rem 0;
+                        color: $red;
+                        font-weight: 600;
+                    }
+                }
             }
+            .card:nth-child(2) {ul {li {color: $yellow;}}}
+            .card:nth-child(3) {ul {li {color: $mint;}}}
+            .card:nth-child(4) {ul {li {color: $indigo;}}}
         }
     }
 }
@@ -92,6 +118,26 @@ section {
                 border-radius: 1rem;
                 color: $light;
             }
+        }
+    }
+    .box-content:nth-child(2) {
+        position: relative;
+        user-select: none;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $red;
+            border-radius: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
         }
     }
 }

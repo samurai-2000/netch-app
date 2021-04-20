@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { TrackingService } from 'src/app/services/tracking.service';
 
@@ -17,7 +18,10 @@ export class TrackingComponent implements OnInit {
 
   constructor(
     private track: TrackingService,
-  ) { }
+    private title: Title,
+  ) { 
+    this.title.setTitle('Отслеживание заказа')
+  }
 
   ngOnInit(): void {
     this.checkTrack()
