@@ -19,7 +19,7 @@ section {
         .box-title {
             background: tt($dark, 0.5);
             border-radius: 1rem;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
 
             h2 {
                 text-align: center;
@@ -39,14 +39,14 @@ section {
             .card {
                 display: flex;
                 flex-direction: column;
-                flex: 20%;
+                flex: 23%;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
                 color: $light;
 
-                h3 {font-size: 1.2rem; text-align: center;margin: 0.5rem 0;}
+                h3 {font-size: 1.2rem; text-align: center; margin: 0.5rem 0;}
                 h3.one {color: $red;}
                 h3.two {color: $yellow;}
                 h3.tree {color: $mint;}
@@ -67,10 +67,35 @@ section {
                         font-weight: 600;
                     }
                 }
+
+                @media (max-width: 992px) {flex: 25%;}
+                @media (max-width: 768px) {flex: 33%;}
+                @media (max-width: 530px) {flex: 100%;}
             }
             .card:nth-child(2) {ul {li {color: $yellow;}}}
             .card:nth-child(3) {ul {li {color: $mint;}}}
             .card:nth-child(4) {ul {li {color: $indigo;}}}
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 50px;
+                padding: 0 20px;
+                background: tt($dark, 0.7);
+                border: none; outline: none; border-radius: 1rem;
+                color: $light;
+                font-weight: 500;
+                transition: 0.2s;
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    box-shadow: 0 0 0 5px tt($indigo, 0.7);
+                }
+
+                img {margin-left: 1rem;}
+            }
         }
     }
 }
@@ -92,7 +117,7 @@ section {
         .box-title {
             background: tt($dark, 0.5);
             border-radius: 1rem;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
 
             h2 {
                 text-align: center;
@@ -117,6 +142,59 @@ section {
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
                 color: $light;
+
+                span {
+                    display: block;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                span.info {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $yellow;
+                    font-style: italic;
+                }
+
+                ul {
+                    margin: 1rem 0;
+
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 1rem;
+
+                        span {
+                            display: block;
+                            text-align: left;
+                            font-weight: 400; 
+                            font-size: 1rem;
+                        }
+                        span.red {font-weight: 500; font-style: normal; font-size: 1.2rem; color: $red;}
+                        span.mint {font-weight: 500; font-style: normal; font-size: 1.2rem; color: $mint;}
+                    }
+                }
+
+                .btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 50px;
+                    padding: 0 20px;
+                    margin-top: 1rem;
+                    background: tt($dark, 0.7);
+                    border: none; outline: none; border-radius: 1rem;
+                    color: $light;
+                    font-weight: 500;
+                    transition: 0.2s;
+                    cursor: pointer;
+            
+                    &:hover, &:focus {
+                        box-shadow: 0 0 0 5px tt($red, 0.7);
+                    }
+            
+                }
             }
         }
     }
@@ -138,35 +216,6 @@ section {
             border-radius: 1rem;
             font-size: 2rem;
             font-weight: 600;
-        }
-    }
-}
-.s3 {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4rem;
-
-    h3 {
-        margin: 2rem 1rem;
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: $light;
-    }
-
-    .btn {
-        height: 65px;
-        padding: 0 20px;
-        margin: 2rem 0;
-        background: $red;
-        border: none; outline: none; border-radius: 1rem;
-        color: $light;
-        font-size: 1.2rem;
-        font-weight: 500;
-        transition: 0.2s;
-        cursor: pointer;
-
-        &:hover, &:focus {
-            box-shadow: 0 0 0 5px tt($red, 0.7);
         }
     }
 }

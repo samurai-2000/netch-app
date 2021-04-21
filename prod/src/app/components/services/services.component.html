@@ -62,6 +62,7 @@
                     <li>"Вебпак человеческий"</li>
                 </ul>
             </div>
+            <button (click)='openModal()' class="btn">Что такое Вебпак? <img src="\assets\svgs\help.svg" alt="help"></button>
         </div>
     </div>
 </section>
@@ -71,11 +72,64 @@
             <h2>Услуги</h2>
         </div>
         <div class="box-cards">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card">
+                <span>Лендинг</span>
+                <ul>
+                    <li><span>Базовая цена:</span> <span class="mint">5000₽</span></li>
+                    <li><span>Разработка макета:</span> <span class="red">+5000₽</span></li>
+                    <li><span>Развертывание:</span> <span class="red">+2000₽</span></li>
+                    <li><span>База данных:</span> <span class="red">+2000₽</span></li>
+                </ul>
+                <span class="info">Базовая цена не включает в себя разработку макета</span>
+                <button routerLink='/brief' class="btn">Оформить заказ</button>
+            </div>
+            <div class="card">
+                <span>Сайт-визитка</span>
+                <ul>
+                    <li><span>Базовая цена:</span> <span class="mint">4000₽</span></li>
+                    <li><span>Разработка макета:</span> <span class="red">+5000₽</span></li>
+                    <li><span>Развертывание:</span> <span class="red">+2000₽</span></li>
+                    <li><span>База данных:</span> <span class="red">+2000₽</span></li>
+                </ul>
+                <span class="info">Базовая цена не включает в себя разработку макета</span>
+                <button routerLink='/brief' class="btn">Оформить заказ</button>
+            </div>
+            <div class="card">
+                <span>Сайт-портфолио</span>
+                <ul>
+                    <li><span>Базовая цена:</span> <span class="mint">5000₽</span></li>
+                    <li><span>Разработка макета:</span> <span class="red">+5000₽</span></li>
+                    <li><span>Страница администратора:</span> <span class="red">+3000₽</span></li>
+                    <li><span>Развертывание:</span> <span class="red">+2000₽</span></li>
+                    <li><span>База данных:</span> <span class="red">+2000₽</span></li>
+                </ul>
+                <span class="info">Базовая цена не включает в себя разработку макета</span>
+                <button routerLink='/brief' class="btn">Оформить заказ</button>
+            </div>
+            <div class="card">
+                <span>Интернет-магазин</span>
+                <ul>
+                    <li><span>Базовая цена:</span> <span class="mint">15000₽</span></li>
+                    <li><span>Разработка макета:</span> <span class="red">+5000₽</span></li>
+                    <li><span>Страница администратора:</span> <span class="red">от 2000₽</span></li>
+                    <li><span>Развертывание:</span> <span class="red">+2000₽</span></li>
+                    <li><span>База данных:</span> <span class="red">+2000₽</span></li>
+                </ul>
+                <span class="info">Базовая цена не включает в себя разработку макета</span>
+                <button routerLink='/brief' class="btn">Оформить заказ</button>
+            </div>
+            <div class="card">
+                <span>Официальный сайт</span>
+                <ul>
+                    <li><span>Базовая цена:</span> <span class="mint">10000₽</span></li>
+                    <li><span>Разработка макета:</span> <span class="red">+5000₽</span></li>
+                    <li><span>Страница администратора:</span> <span class="red">от 2000₽</span></li>
+                    <li><span>Развертывание:</span> <span class="red">+2000₽</span></li>
+                    <li><span>База данных:</span> <span class="red">+2000₽</span></li>
+                </ul>
+                <span class="info">Базовая цена не включает в себя разработку макета</span>
+                <button routerLink='/brief' class="btn">Оформить заказ</button>
+            </div>
         </div>
     </div>
     <div class="box-content">
@@ -91,7 +145,4 @@
         </div>
     </div>
 </section>
-<section class="s3">
-    <h3>Для того чтобы оформить заказ необходимо заполнить бриф, после чего нашим специалистам будет проще понять вашу задумку</h3>
-    <button routerLink="/brief" class="btn">Заполнить бриф</button>
-</section>
+
