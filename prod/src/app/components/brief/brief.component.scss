@@ -81,12 +81,19 @@ section {min-height: 100vh;}
       }
 
       label {
+        width: 25px;
+        height: 25px;
+        margin-top: 1rem;
+        background: $indigo;
+        border-radius: 0.4rem;
+        user-select: none;
+        cursor: pointer;
         
-        input[type='checkbox'] {
-                
-        }
       }
-      
+      input[type='checkbox'] {display: none;}
+      input[type='checkbox']:checked {
+        background: $indigo;
+      }
 
     }
 
@@ -103,6 +110,14 @@ section {min-height: 100vh;}
 
       &:hover, &:focus {
         box-shadow: 0 0 0 5px tt($mint, 0.7);
+      }
+
+      &:disabled {
+        background: $grey-middle;
+        cursor: not-allowed;
+      }
+      &:disabled:hover, &:disabled:focus {
+        box-shadow: 0 0 0 5px tt($grey-middle, 0.7);
       }
     }
   }

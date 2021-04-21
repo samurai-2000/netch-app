@@ -59,6 +59,7 @@
 <section class="s6">
     <h4>Заказать обратную связь</h4>
     <div class="box-form">
+
         <form>
             <label><input 
                 [(ngModel)]='feedbackVals.name' 
@@ -70,8 +71,13 @@
                 [(ngModel)]='feedbackVals.phone' 
                 name="mail" type="email"><i class="material-icons">email</i></label>
 
-            <button (click)='postFeedback()' class="btn">Отправить</button>
+            <button [disabled]='!checkInput' (click)='postFeedback()' class="btn">Отправить</button>
             <button class="btn btn-reset" type="reset">Очистить</button>
         </form>
+
+        <span class="info">Даю согласие на обработку персональных данных</span>
+        <label for="checked"><img *ngIf='checkInput' src="\assets\svgs\done.svg" alt="done"></label>
+        <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
+
     </div>
 </section>

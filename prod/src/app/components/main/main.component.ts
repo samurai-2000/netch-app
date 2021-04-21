@@ -18,6 +18,8 @@ export class MainComponent implements OnInit {
     email: '',
     phone: '',
   }
+  public checkInput = false
+  
   public triggerS1 = false
   public triggerS2 = false
   public triggerS3 = false

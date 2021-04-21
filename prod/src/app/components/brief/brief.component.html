@@ -53,9 +53,11 @@
         <span>Основные разделы на сайте</span>
         <textarea name="sections" [(ngModel)]='briefVals.sections'></textarea>
 
-        <label for="check"><input type="checkbox" name="check" id="check">Даю соглсие на обработку персональных данных</label>
-
-        <button (click)='postBrief()' class="btn">Отправить</button>
+        <span>Даю согласие на обработку персональных данных</span>
+        <label for="checked"><img *ngIf='checkInput' src="\assets\svgs\done.svg" alt="done"></label>
+        <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
+        
+        <button [disabled]='!checkInput' (click)='postBrief()' class="btn">Отправить</button>
       </form>
     </div>
   </div>

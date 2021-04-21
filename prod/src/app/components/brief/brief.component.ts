@@ -30,6 +30,7 @@ export class BriefComponent implements OnInit {
     content: '',
     sections: '',
   }
+  public checkInput = false
 
   constructor(
     private brief: BriefService,

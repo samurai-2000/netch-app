@@ -44,6 +44,7 @@ section {
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
+                transition: 0.2s;
                 color: $light;
 
                 h3 {font-size: 1.2rem; text-align: center; margin: 0.5rem 0;}
@@ -68,34 +69,45 @@ section {
                     }
                 }
 
+                &:hover {box-shadow: 0 0 0 5px tt($red, 0.7);}
+
                 @media (max-width: 992px) {flex: 25%;}
                 @media (max-width: 768px) {flex: 33%;}
                 @media (max-width: 530px) {flex: 100%;}
             }
-            .card:nth-child(2) {ul {li {color: $yellow;}}}
-            .card:nth-child(3) {ul {li {color: $mint;}}}
-            .card:nth-child(4) {ul {li {color: $indigo;}}}
+            .card:nth-child(2) {ul {li {color: $yellow;}} &:hover {box-shadow: 0 0 0 5px tt($yellow, 0.7);}}
+            .card:nth-child(3) {ul {li {color: $mint;}} &:hover {box-shadow: 0 0 0 5px tt($mint, 0.7);}}
+            .card:nth-child(4) {ul {li {color: $indigo;}} &:hover {box-shadow: 0 0 0 5px tt($indigo, 0.7);}}
+        }
+    }
 
-            .btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 50px;
-                padding: 0 20px;
-                background: tt($dark, 0.7);
-                border: none; outline: none; border-radius: 1rem;
-                color: $light;
-                font-weight: 500;
-                transition: 0.2s;
-                cursor: pointer;
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        background: tt($dark, 0.7);
+        border: none; outline: none; border-radius: 1rem;
+        color: $light;
+        font-weight: 500;
+        transition: 0.2s;
+        cursor: pointer;
 
-                &:hover, &:focus {
-                    box-shadow: 0 0 0 5px tt($indigo, 0.7);
-                }
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($indigo, 0.7);
+        }
 
-                img {margin-left: 1rem;}
-            }
+        img {margin-left: 1rem;}
+    }
+    .btn:nth-child(2) {
+        height: 100px;
+        background: tt($dark, 0.3);
+        font-size: 1.5rem;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 0 5px tt($mint, 0.7);
         }
     }
 }
@@ -141,6 +153,7 @@ section {
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
+                transition: 0.2s;
                 color: $light;
 
                 span {
@@ -195,6 +208,8 @@ section {
                     }
             
                 }
+
+                &:hover {box-shadow: 0 0 0 5px tt($red, 0.7);}
             }
         }
     }

@@ -39,11 +39,12 @@ section {min-height: 100vh;}
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                flex: 30%;
+                flex: 32%;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
+                transition: 0.2s;
                 color: $light;
 
                 h3 {
@@ -58,6 +59,10 @@ section {min-height: 100vh;}
                     margin-top: 1rem;
                     fill: $red;
                 }
+
+                &:hover {box-shadow: 0 0 0 5px tt($red, 0.7);}
+
+                @media (max-width: 530px) {flex: 100%;}
             }
             .card:nth-child(4) {
                 flex: 100%;
