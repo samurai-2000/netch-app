@@ -49,8 +49,12 @@
 
             <ng-template #track>
                 <span>Введите номер заказа</span>
-                <input #trackInput (focus)='trackValue = "NETCH-"' [value]="trackValue" type="text" placeholder="NETCH-(номер заказа)">
-                <button (click)='getUserTrack(trackInput.value.substr(6))' class="btn">Отправить</button>
+                <input #trackInput name="track"
+                (focus)='trackValue = "NETCH-"' type="text" 
+                [(ngModel)]='trackValue'
+                placeholder="NETCH-(номер заказа)">
+                <button [disabled]='trackInput.value === ""' 
+                (click)='getUserTrack(trackInput.value.substr(6))' class="btn">Отправить</button>
                 <span *ngIf='trackInvalid && !load' class="invalid">Заказ не найден :(</span>
                 <div *ngIf='load' class="loader"></div>
             </ng-template>

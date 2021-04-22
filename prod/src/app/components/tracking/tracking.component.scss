@@ -117,6 +117,14 @@ section {min-height: 100vh;}
       &:hover, &:focus {
         box-shadow: 0 0 0 5px tt($mint, 0.7);
       }
+
+      &:disabled {
+        background: $grey-middle;
+        cursor: not-allowed;
+      }
+      &:disabled:hover, &:disabled:focus {
+        box-shadow: 0 0 0 5px tt($grey-middle, 0.7);
+      }
     }
 
     .loader {
