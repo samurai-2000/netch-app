@@ -33,10 +33,13 @@
         <input type="text" name="activity" [(ngModel)]='briefVals.kindOfActivity'>
 
         <span>Есть ли макет сайта?</span>
-        <input type="text" name="design" [(ngModel)]='briefVals.design'>
+        <select [(ngModel)]='briefVals.design' name="design">
+          <option value="Да">Да</option>
+          <option value="Нет">Нет</option>
+        </select>
 
         <span>Есть ли сайт?</span>
-        <input type="text" name="site" [(ngModel)]='briefVals.site'>
+        <input type="text" name="site" [(ngModel)]='briefVals.site' placeholder="ссылка на сайт">
 
         <span>Ваша продукция?</span>
         <input type="text" name="products" [(ngModel)]='briefVals.products'>
@@ -45,10 +48,16 @@
         <input type="text" name="services" [(ngModel)]='briefVals.services'>
 
         <span>Нужна помощь в создании логотипа?</span>
-        <input type="text" name="logo" [(ngModel)]='briefVals.logo'>
+        <select [(ngModel)]='briefVals.logo' name="logo">
+          <option value="Да">Да</option>
+          <option value="Нет">Нет</option>
+        </select>
 
         <span>У вас есть контент для сайта?</span>
-        <input type="text" name="content" [(ngModel)]='briefVals.content'>
+        <select [(ngModel)]='briefVals.content' name="content">
+          <option value="Да">Да</option>
+          <option value="Нет">Нет</option>
+        </select>
 
         <span>Основные разделы на сайте</span>
         <textarea name="sections" [(ngModel)]='briefVals.sections'></textarea>

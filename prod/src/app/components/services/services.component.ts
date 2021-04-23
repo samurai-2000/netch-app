@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { AppComponent } from 'src/app/app.component';
+import { 
+  businessText, 
+  lendingText, 
+  officialText, 
+  portfolioText, 
+  shopText, 
+  webpackText } from 'src/app/data/text';
 
 @Component({
   selector: 'netch-services',
@@ -19,9 +26,21 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public openModal() {
-    this.app.openModal('Вебпак',
-    `Вебпаки - это рекомендованные нашими разработчиками наборы технологий, которые позволят оптимально использовать все необходимые ресурсы под конкретную задачу. Ниже представлены наши собственные наработки и их сопоставимость с видами веб-приложений, чтобы в итоге получить выгодные проекты высокого качества в удобные для вас сроки. `)
+  public openModal(header: string) {
+
+    if (header === 'Вебпак')
+    return this.app.openModal(header, webpackText)
+    if (header === 'Лендинг')
+    return this.app.openModal(header, lendingText)
+    if (header === 'Сайт-визитка')
+    return this.app.openModal(header, businessText)
+    if (header === 'Сайт-портфолио')
+    return this.app.openModal(header, portfolioText)
+    if (header === 'Интернет-магазин')
+    return this.app.openModal(header, shopText)
+    if (header === 'Официальный сайт')
+    return this.app.openModal(header, officialText)
+
   }
 
 }

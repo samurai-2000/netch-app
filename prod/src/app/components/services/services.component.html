@@ -70,7 +70,7 @@
                     <li>"Вебпак человеческий"</li>
                 </ul>
             </div>
-            <button (click)='openModal()' class="btn">Что такое Вебпак? <img src="\assets\svgs\help.svg" alt="help"></button>
+            <button (click)='openModal("Вебпак")' class="btn">Что такое Вебпак? <img src="\assets\svgs\help.svg" alt="help"></button>
         </div>
     </div>
     <button routerLink='/brief' class="btn">Заказать сайт</button>
@@ -92,7 +92,7 @@
                 <span class="info">Базовая цена не включает в себя разработку макета</span>
                 
                 <button routerLink='/brief' class="btn">Оформить заказ</button>
-                <button class="btn btn-info">Что такое лендинг?<img src="\assets\svgs\help.svg" alt="help"></button>
+                <button (click)='openModal("Лендинг")' class="btn btn-info">Что такое лендинг?<img src="\assets\svgs\help.svg" alt="help"></button>
             </div>
             <div class="card">
                 <span>Сайт-визитка</span>
@@ -105,7 +105,7 @@
                 <span class="info">Базовая цена не включает в себя разработку макета</span>
 
                 <button routerLink='/brief' class="btn">Оформить заказ</button>
-                <button class="btn btn-info">Что такое сайт-визитка?<img src="\assets\svgs\help.svg" alt="help"></button>
+                <button (click)='openModal("Сайт-визитка")' class="btn btn-info">Что такое сайт-визитка?<img src="\assets\svgs\help.svg" alt="help"></button>
             </div>
             <div class="card">
                 <span>Сайт-портфолио</span>
@@ -119,7 +119,7 @@
                 <span class="info">Базовая цена не включает в себя разработку макета</span>
 
                 <button routerLink='/brief' class="btn">Оформить заказ</button>
-                <button class="btn btn-info">Что такое сайт-портфолио?<img src="\assets\svgs\help.svg" alt="help"></button>
+                <button (click)='openModal("Сайт-портфолио")' class="btn btn-info">Что такое сайт-портфолио?<img src="\assets\svgs\help.svg" alt="help"></button>
             </div>
             <div class="card">
                 <span>Интернет-магазин</span>
@@ -133,7 +133,7 @@
                 <span class="info">Базовая цена не включает в себя разработку макета</span>
 
                 <button routerLink='/brief' class="btn">Оформить заказ</button>
-                <button class="btn btn-info">Что такое интернет-магазин?<img src="\assets\svgs\help.svg" alt="help"></button>
+                <button (click)='openModal("Интернет-магазин")' class="btn btn-info">Что такое интернет-магазин?<img src="\assets\svgs\help.svg" alt="help"></button>
             </div>
             <div class="card">
                 <span>Официальный сайт</span>
@@ -147,7 +147,7 @@
                 <span class="info">Базовая цена не включает в себя разработку макета</span>
 
                 <button routerLink='/brief' class="btn">Оформить заказ</button>
-                <button class="btn btn-info">Что такое официальный сайт?<img src="\assets\svgs\help.svg" alt="help"></button>
+                <button (click)='openModal("Официальный сайт")' class="btn btn-info">Что такое официальный сайт?<img src="\assets\svgs\help.svg" alt="help"></button>
             </div>
         </div>
     </div>

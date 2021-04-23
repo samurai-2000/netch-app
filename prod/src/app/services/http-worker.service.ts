@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class HttpWorkerService {
 
-  private url = 'http://netch-env-1.eba-2jpxc2x7.eu-central-1.elasticbeanstalk.com'
+  private url = 'http://netch-env-2.eu-central-1.elasticbeanstalk.com'
 
   constructor(private http: HttpClient) {}
 
