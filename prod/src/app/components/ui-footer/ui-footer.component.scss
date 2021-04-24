@@ -22,6 +22,8 @@ footer {
     .links-box {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
         flex: auto;
 
         .link {
@@ -31,8 +33,16 @@ footer {
             transition: 0.2s;
 
             &:hover {color: $indigo;}
+
+            @media (max-width: 350px) {
+                margin: 1rem 0.5rem;
+            }
         }
         .active {color: $scarlet;}
+
+        @media (max-width: 350px) {
+            justify-content: center;
+        }
     }
 
     .info-box {
@@ -53,7 +63,7 @@ footer {
 
                 &:hover {color: $indigo;}
 
-                @media (max-width: 320px) {
+                @media (max-width: 350px) {
                     margin: 1rem 0.5rem;
                 }
             }

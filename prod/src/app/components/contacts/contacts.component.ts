@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { AppComponent } from 'src/app/app.component';
-import { HttpWorkerService } from 'src/app/services/http-worker.service';
 
 @Component({
   selector: 'netch-contacts',
@@ -10,9 +8,9 @@ import { HttpWorkerService } from 'src/app/services/http-worker.service';
 })
 export class ContactsComponent implements OnInit{
 
+  public completeCopy = false
+
   constructor(
-    private app: AppComponent,
-    private httpWorker: HttpWorkerService,
     private title: Title
   ) {
     this.title.setTitle('Контакты')
@@ -22,9 +20,10 @@ export class ContactsComponent implements OnInit{
 
   }
 
-  openModal() {
-    this.httpWorker.getTextContent('contacts').subscribe((res: any) => {
-      this.app.openModal(res[0].header,res[0].body)
-    })
+  copy(value: string) {
+    navigator.clipboard.writeText(value)
+    .then(() => this.completeCopy = true)
+    .then(() => setTimeout(() => this.completeCopy = false, 1000))
   }
+
 }

@@ -4,18 +4,25 @@
       <h1>Бриф</h1>
     </div>
     <div class="brief-body">
-      <form>
-        <span>Ф.И.О.</span>
-        <input type="text" name="username"  [(ngModel)]='briefVals.name'>
+      <form name="form-brief">
+        <span>Ф.И.О.*</span>
+        <span *ngIf='u.invalid && u.touched' class="invalid">Введите Ф.И.О.</span>
+        <input type="text" name="username" #u='ngModel'
+        [(ngModel)]='briefVals.name' required>
 
-        <span>Почта</span>
-        <input type="email" name="email" [(ngModel)]='briefVals.email'>
+        <span>Почта*</span>
+        <span *ngIf='e.invalid && e.touched' class="invalid">Введите почту</span>
+        <input type="email" name="email" #e='ngModel'
+        [(ngModel)]='briefVals.email' required>
 
-        <span>Телефон</span>
-        <input type="tel" name="phone" [(ngModel)]='briefVals.phone'>
+        <span>Телефон*</span>
+        <span *ngIf='t.invalid && t.touched' class="invalid">Введите телефон</span>
+        <input type="tel" name="phone" #t='ngModel'
+        [(ngModel)]='briefVals.phone' required>
+        
 
         <span>Цели проекта</span>
-        <textarea name="goals" [(ngModel)]='briefVals.goals'></textarea>
+        <textarea name="goals" [(ngModel)]='briefVals.goals' placeholder="тип сайта"></textarea>
 
         <span>Требования к проекту</span>
         <textarea name="requirements" [(ngModel)]='briefVals.requirements'></textarea>
@@ -66,7 +73,10 @@
         <label for="checked"><img *ngIf='checkInput' src="\assets\svgs\done.svg" alt="done"></label>
         <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
         
-        <button [disabled]='!checkInput' (click)='postBrief()' class="btn">Отправить</button>
+        <button [disabled]='!checkInput || e.invalid || t.invalid || u.invalid' 
+        (click)='postBrief()' class="btn" type="submit">Отправить</button>
+        <span 
+        *ngIf='e.invalid || t.invalid || u.invalid' class="invalid">Заполните обязательные поля</span>
       </form>
     </div>
   </div>

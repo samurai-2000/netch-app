@@ -32,36 +32,71 @@ section {min-height: 100vh;}
             flex-direction: column;
             flex: auto;
             flex-wrap: wrap;
-            gap: 1rem;
             width: 100%;
             margin-top: 1rem;
 
             .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 flex: auto;
                 height: auto;
                 padding: 1rem;
                 background: tt($dark, 0.7);
                 border-radius: 1rem;
+                transition: 0.2s;
                 color: $light;
+
+                &:hover {box-shadow: 0 0 0 5px tt($red, 0.7);}
+
+                ul {
+                    width: 100%;
+                    max-width: 400px;
+
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        font-size: 1.2rem;
+                        margin: 1rem 0;
+                        font-weight: 500;
+
+                        span, a {
+                            font-size: 1.2rem;
+                            color: $light;
+                            transition: 0.2s;
+                        }
+                        span.red {color: $red; user-select: none;}
+                        a:hover {color: $indigo;}
+
+                        i {
+                            margin: 0.5rem;
+                            cursor: pointer;
+                            transition: 0.2s;
+                            user-select: none;
+
+                            &:hover {color: $mint;}
+                        }
+
+                        @media (max-width: 350px) {flex-direction: column;}
+
+                        
+                    }
+                    li.title {margin: 0; margin-top: 3rem;}
+                    li.title:first-child {margin-top: 1rem;}
+                }
+                span.info {
+                    display: block;
+                    text-align: center;
+                    margin-top: 1rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $mint;
+                }
+                
             }
-        }
-    }
-
-    .btn {
-        flex: auto;
-        height: 65px;
-        padding: 0 20px;
-        margin: 2rem 1rem;
-        background: $indigo;
-        border: none; outline: none; border-radius: 1rem;
-        color: $light;
-        font-size: 1.2rem;
-        font-weight: 500;
-        transition: 0.2s;
-        cursor: pointer;
-
-        &:hover, &:focus {
-            box-shadow: 0 0 0 5px tt($indigo, 0.7);
         }
     }
 }
