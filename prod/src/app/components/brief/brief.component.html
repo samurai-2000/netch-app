@@ -76,7 +76,9 @@
         <button [disabled]='!checkInput || e.invalid || t.invalid || u.invalid' 
         (click)='postBrief()' class="btn" type="submit">Отправить</button>
         <span 
-        *ngIf='e.invalid || t.invalid || u.invalid' class="invalid">Заполните обязательные поля</span>
+        *ngIf='e.invalid && e.touched || 
+        t.invalid && t.touched || 
+        u.invalid && u.touched' class="invalid">Заполните обязательные поля</span>
       </form>
     </div>
   </div>

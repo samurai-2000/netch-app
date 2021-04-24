@@ -348,6 +348,12 @@ section {min-height: 100vh; user-select: none;}
         font-weight: 500;
         color: $light;
     }
+    span.invalid {
+        margin-bottom: 1rem;
+        color: $red;
+        font-weight: 600;
+        font-size: 1rem;
+    }
     label {
         width: 25px;
         height: 25px;
