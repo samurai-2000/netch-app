@@ -64,7 +64,7 @@ section {min-height: 100vh;}
 
                 @media (max-width: 530px) {flex: 100%;}
             }
-            .card:nth-child(4) {
+            .card:nth-child(4), .card:nth-child(5) {
                 flex: 100%;
 
                 ul {
@@ -85,6 +85,9 @@ section {min-height: 100vh;}
                         }
                     }
                 }
+            }
+            .card:nth-child(5) {
+                svg {width: 120px; height: 120px;}
             }
         }
     }

@@ -19,6 +19,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { BriefComponent } from './components/brief/brief.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { UiAdminModalComponent } from './components/ui-admin-modal/ui-admin-modal.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UiAdminModalComponent } from './components/ui-admin-modal/ui-admin-moda
     BriefComponent,
     TrackingComponent,
     UiAdminModalComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
