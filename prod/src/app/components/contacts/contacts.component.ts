@@ -20,7 +20,7 @@ export class ContactsComponent implements OnInit{
 
   }
 
-  copy(value: string) {
+  public copy(value: string) {
     navigator.clipboard.writeText(value)
     .then(() => this.completeCopy = true)
     .then(() => setTimeout(() => this.completeCopy = false, 1000))

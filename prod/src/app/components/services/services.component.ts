@@ -24,6 +24,7 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
   }
 
   public openModal(header: string) {

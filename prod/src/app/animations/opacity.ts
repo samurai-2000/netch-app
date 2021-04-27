@@ -25,7 +25,7 @@ export const rightLeft = trigger('rightLeft',[
     opacity: 1,
   })),
   transition('transparency <=> opacity', [
-    animate('0.3s ease-in'),
+    animate('0.5s ease-in'),
   ]),
 
 ])
@@ -54,6 +54,19 @@ export const opacity = trigger('opacity',[
   })),
   transition('transparency <=> opacity', [
     animate('0.5s ease-in'),
+  ]),
+
+])
+
+export const line = trigger('Line',[
+  state('point', style({
+    height: '0px',
+  })),
+  state('line', style({
+    height: '*',
+  })),
+  transition('point <=> line', [
+    animate('0.3s ease-in'),
   ]),
 
 ])

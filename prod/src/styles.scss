@@ -11,6 +11,7 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
 body {
+    overflow-x: hidden;
     background: $grey-dark;
     ::selection {background: tt($indigo,0.5);}
 }

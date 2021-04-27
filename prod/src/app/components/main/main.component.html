@@ -1,89 +1,77 @@
 <section class="s1">
-    <div class="box-logo">
-        <img 
-        [@leftRight]="triggerS1 ? 'opacity' : 'transparency'" 
-        draggable="false" src="\assets\svgs\LOGO.svg" alt="LOGO">
+    <div class="img-box">
+        <img [@leftRight]='animateActiveSection ? "opacity" : "transparency"' 
+        draggable="false" src="/assets/svgs/LOGO.svg" alt="LOGO">
     </div>
-    <div class="box-title">
-        <div class="box-title_container">
-            <h1 [@rightLeft]="triggerS1 ? 'opacity' : 'transparency'" >Нужен сайт?</h1>
-            <div [@lineW]="triggerS1 ? 'run' : 'wait'" class="line"></div>
-            <p [@leftRight]="triggerS1 ? 'opacity' : 'transparency'">наша команда профессионалов<br> 
-                поможет вам в решении<br> 
-                поставленной задачи</p>
-        </div>
+    <div [@rightLeft]='animateActiveSection ? "opacity" : "transparency"' class="text-box">
+        <span class="header">Нужен сайт?</span>
+        <span class="sub-header">наша команда разработчиков<br>поможет вам в решении поставленной задачи</span>
     </div>
+    <div [@Line]='animateActiveSection ? "line" : "point"' class="line"></div>
 </section>
-<section class="s2">
-    <div class="box-title">
-        <h2 [@leftRight]="triggerS2 ? 'opacity' : 'transparency'">
-            <div [@lineH]="triggerS2 ? 'run' : 'wait'" class="line"></div>
-            Высокие<br> 
-            технологии</h2>
-    </div>
+<section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s2">
+    <span class="header">Высокие технологии</span>
+    <span class="sub-header">Наша команда использует современные технологии
+         при разработке сайтов и веб-приложений любой сложности и масштабируемости</span>
+    <img draggable="false" src="/assets/svgs/techs.svg" alt="techs">
+    <img draggable="false" src="/assets/svgs/settings.svg" alt="settings">
+    <div class="line"></div>
 </section>
-<section class="s3">
-    <!-- <div class="box-points">
-        <div class="point"></div>
-        <div class="point"></div>
-        <div class="point"></div>
-        <div class="point"></div>
-        <div class="point"></div>
-    </div> -->
+<section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s3">
+    <span class="header">Проектный подход</span>
+    <span class="sub-header">Ваша идея будет тщательно спланирована и организована, 
+        благодаря чему вы сможете отслеживать ход выполнения работ на нашем сайте!
+    </span>
+    <div class="point-box">
+        <div class="point">1</div>
+        <div class="point">2</div>
+        <div class="point">3</div>
+        <div class="point">4</div>
+        <div class="point">5</div>
+        <div class="point">6</div>
+        <div class="point">7</div>
+        <div class="point">8</div>
+    </div>
+    <img draggable="false" src="/assets/svgs/timeline.svg" alt="timeline">
+    <div class="line"></div>
 </section>
-<section class="s4">
-    <div class="box-title">
-        <h2 [@bottomTop]="triggerS4 ? 'opacity' : 'transparency'">Низкие цены</h2>
-        <div [@lineW]="triggerS4 ? 'run' : 'wait'" class="line"></div>
-        <ul [@leftRight]="triggerS4 ? 'opacity' : 'transparency'" class="list">
-            <li>Сайт-визитка <span>/</span> от 4000₽</li>
-            <li>Лендинг <span>/</span> от 5000₽</li>
-            <li>Официальный сайт <span>/</span> от 10000₽</li>
-            <li>Интеренет магазин <span>/</span> от 15000₽</li>
-        </ul>
-        <button [@opacity]="triggerS4 ? 'opacity' : 'transparency'" routerLink='/brief' class="btn">Заказать</button>
+<section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s4">
+    <div>
+        <span class="header">Низкие цены</span>
+        <span class="sub-header">Наши услуги в первую очеред расчитаны на частных 
+            предпринимателей и малые компании, у которых зачастую сильно ограниченный бюджет
+            для продвижения своих услуг в интернете</span>
     </div>
+    
+    <ul>
+        <li>Сайт-визитка от <span class="red">4000₽</span></li>
+        <li>Сайт-порфолио от <span class="red">5000₽</span></li>
+        <li>Лендинг от <span class="red">5000₽</span></li>
+        <li>Официальный сайт от <span class="red">10000₽</span></li>
+        <li>Интернет-магазин от <span class="red">15000₽</span></li>
+    </ul>
+    <button routerLink='/services' class="btn">Наши услуги</button>
+    <div class="line"></div>
 </section>
-<section class="s5">
-    <div class="box-logo">
-        <img 
-        [@bottomTop]="triggerS5 ? 'opacity' : 'transparency'" 
-        draggable="false" src="\assets\svgs\clocks.svg" alt="clocks">
+<section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s5">
+    <div>
+        <span class="header">В короткие сроки</span>
+        <span class="sub-header">Мы всегда стараемся выполнить
+             поставленную задачу в максимально короткие сроки
+            не теряя при этом качества конечного продукта</span>
     </div>
-    <div class="box-title">
-        <div [@lineW]="triggerS5 ? 'run' : 'wait'" class="line"></div>
-        <h2 [@leftRight]="triggerS5 ? 'opacity' : 'transparency'">В короткие сроки</h2>
-        <h3 [@rightLeft]="triggerS5 ? 'opacity' : 'transparency'">от 5 дней</h3>
-    </div>
+    <img src="/assets/svgs/clocks.svg" alt="clocks">
+    <div class="line"></div>
 </section>
-<section class="s6">
-    <h4>Заказать обратную связь</h4>
-    <div class="box-form">
-
-        <form name="feedbackForm">
-            <label><input
-                #u='ngModel' 
-                [(ngModel)]='feedbackVals.name' 
-                name="txt" type="text" required><i class="material-icons">person</i></label>
-            <label><input 
-                #t='ngModel'
-                [(ngModel)]='feedbackVals.email' 
-                name="call" type="tel" required><i class="material-icons">call</i></label>
-            <label><input 
-                #e='ngModel'
-                [(ngModel)]='feedbackVals.phone' 
-                name="mail" type="email" required><i class="material-icons">email</i></label>
-
-            <button type="submit" [disabled]='!checkInput || e.invalid || t.invalid || u.invalid' (click)='postFeedback()' class="btn">Отправить</button>
-            <button class="btn btn-reset" type="reset">Очистить</button>
-        </form>
-
-        <span *ngIf='e.invalid && e.touched || 
-        t.invalid && t.touched || 
-        u.invalid && u.touched' class="invalid">Заполните необходимые поля</span>
-        <span class="info">Даю согласие на обработку персональных данных</span>
-        <label for="checked"><img *ngIf='checkInput' src="\assets\svgs\done.svg" alt="done"></label>
-        <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
-
-    </div>
+<section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s6">
+    <span class="header">Обратная связь</span>
+    <form name="feedBack">
+        <input type="text" placeholder="введите Ф.И.О">
+        <input type="tel" placeholder="введите номер телефона">
+        <input type="email" placeholder="введите почту">
+    </form>
+    <span class="info">Даю согласие на обработку персональных данных</span>
+    <label for="checked"><img *ngIf='checkInput' src="/assets/svgs/done.svg" alt="done"></label>
+    <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
+    <button class="btn">Отправить</button>
 </section>
