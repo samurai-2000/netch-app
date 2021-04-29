@@ -66,12 +66,30 @@
 <section [@leftRight]='animateActiveSectionsAll ? "opacity" : "transparency"' class="s6">
     <span class="header">Обратная связь</span>
     <form name="feedBack">
-        <input type="text" placeholder="введите Ф.И.О">
-        <input type="tel" placeholder="введите номер телефона">
-        <input type="email" placeholder="введите почту">
+        <span *ngIf='u.invalid && u.touched' class="invalid">Введите Ф.И.О.</span>
+        <input 
+        [(ngModel)]='feedbackData.name'
+        #u='ngModel'
+        name="user" 
+        type="text" 
+        placeholder="введите Ф.И.О" required>
+        <span *ngIf='t.invalid && t.touched' class="invalid">Введите телефон</span>
+        <input 
+        [(ngModel)]='feedbackData.phone'
+        #t='ngModel'
+        name="phone" 
+        type="tel" 
+        placeholder="введите номер телефона" required>
+        <span *ngIf='e.invalid && e.touched' class="invalid">Введите почту</span>
+        <input 
+        [(ngModel)]='feedbackData.email'
+        #e='ngModel'
+        name="email" 
+        type="email" 
+        placeholder="введите почту" required>
     </form>
     <span class="info">Даю согласие на обработку персональных данных</span>
     <label for="checked"><img *ngIf='checkInput' src="/assets/svgs/done.svg" alt="done"></label>
     <input type="checkbox" name="check" id="checked" [(ngModel)]='checkInput'>
-    <button class="btn">Отправить</button>
+    <button (click)='postFeedback()' [disabled]='!checkInput || e.invalid || t.invalid || u.invalid' class="btn">Отправить</button>
 </section>

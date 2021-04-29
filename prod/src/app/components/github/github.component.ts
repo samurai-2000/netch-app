@@ -16,6 +16,7 @@ export class GithubComponent implements OnInit {
   public Wolodimir!: string
   public Neon_Samurai!: string
   public IvanZhivodvorov!: string
+  public onlyVanechka!: string
 
   constructor(
     private http: HttpClient,
@@ -39,6 +40,10 @@ export class GithubComponent implements OnInit {
 
     this.http.get(`${this.url}/Ivan-Zhivodvorov`)
     .subscribe((res: any) => this.IvanZhivodvorov = res.avatar_url,
+    () => {} ,() => setTimeout(() => this.load = false, 500))
+
+    this.http.get(`${this.url}/Only-vanechka`)
+    .subscribe((res: any) => this.onlyVanechka = res.avatar_url,
     () => {} ,() => setTimeout(() => this.load = false, 500))
   }
 

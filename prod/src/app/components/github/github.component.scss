@@ -4,6 +4,7 @@
 section {min-height: 100vh;}
 
 .s1 {
+    user-select: none;
     .box-content {
         display: flex;
         flex-direction: column;
@@ -28,7 +29,6 @@ section {min-height: 100vh;}
 
         .box-info {
             display: flex;
-            flex-direction: column;
             flex: auto;
             flex-wrap: wrap;
             gap: 1rem;
@@ -37,7 +37,7 @@ section {min-height: 100vh;}
 
             .card {
                 display: flex;
-                flex: 1 1 auto;
+                flex: 1;
                 flex-direction: column;
                 height: auto;
                 padding: 1rem;
@@ -46,15 +46,21 @@ section {min-height: 100vh;}
                 transition: 0.2s;
                 color: $light;
 
+                @media (max-width: 992px) {
+                    flex: 25%;
+                }
+                @media (max-width: 768px) {
+                    flex: 100%;
+                }
+
                 h2 {
                     text-align: center;
                     margin: 2rem 0;
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
                 h3 {
                     text-align: center;
                     margin-bottom: 1rem;
-                    font-size: 1.3rem;
                 }
 
                 .img-box {
@@ -64,15 +70,15 @@ section {min-height: 100vh;}
 
                     img {
                         width: 100%;
-                        max-width: 300px;
-                        margin: 1rem 0;
+                        max-width: 180px;
+                        margin: 1.5rem 0;
                         margin-bottom: 3rem;
                         border-radius: 50%;
                         transition: 0.2s ease-in-out;
                         cursor: pointer;
 
                         &:hover, &:focus {
-                            box-shadow: 0 0 0 15px tt($indigo, 0.7);
+                            box-shadow: 0 0 0 10px tt($indigo, 0.7);
                         }
                     }
 

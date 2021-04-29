@@ -46,6 +46,20 @@
                 </div>
                 
             </div>
+            <div class="card">
+
+                <h2>Дизайнер</h2>
+                <h3>Иван</h3>
+                <div class="img-box">
+                    <img 
+                    draggable="false"
+                    *ngIf='!load'
+                    (click)='openHref("https://github.com/Only-vanechka")' 
+                    [src]="onlyVanechka" alt="Onlyvanechka">
+                    <div *ngIf='load' class="loader"></div>
+                </div>
+                
+            </div>
         </div>
     </div>
 </section>

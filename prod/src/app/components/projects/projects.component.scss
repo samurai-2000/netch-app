@@ -4,7 +4,10 @@
 section {min-height: 100vh;}
 
 .s1 {
+    user-select: none;
+    
     .box-content {
+        position: relative;
         display: flex;
         flex-direction: column;
         flex: 100%;
@@ -44,5 +47,20 @@ section {min-height: 100vh;}
                 color: $light;
             }
         }
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $red;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
     }
 }
