@@ -45,7 +45,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.httpWorker.postFeedback(this.feedbackData)
     .subscribe(() => {this.app.openModal('Уведомление', 
     'Спасибо за заказ обратной связи свяжуться в ближайшее время (*^_^*)')}, 
-    () => false, 
+    () => {return false}, 
     () => {
       this.feedbackData.name = ''
       this.feedbackData.phone = ''
